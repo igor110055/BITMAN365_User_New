@@ -35,7 +35,9 @@ $('.btn_deposit_save').click(function(){
   $.post("./php/api/postDeposit.php", JSON.stringify(arr), function( response ) {
     $('#modal-deposit_submit').modal('hide')
     if(response == true){
-      izitoast('Successfully submitted!','Wait for confirmation.','fa fa-check-square-o','green','./deposit.php')
+      izitoast('성공적으로 제출되었습니다!','확인을 기다립니다.','fa fa-check-square-o','green','./deposit.php')
+    }else{
+      izitoast('실패!','입금 페이지로 돌아가기.','fa fa-times-circle-o','red','./deposit.php');
     }
   })
 })

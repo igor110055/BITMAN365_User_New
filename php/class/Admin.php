@@ -11,6 +11,7 @@
         private $tbl_bit_wss_tmp = "tbl_bit_wss_tmp";
         private $tbl_bit_transaction_header = "tbl_bit_transaction_headers";
         private $tbl_bit_reserved_result = "tbl_bit_reserved_results";
+        private $tbl_bit_inquiry = "tbl_bit_inquiries";
         
         //properties  
 		public function __construct($db){
@@ -258,6 +259,25 @@
             $stmt->bindParam(':unix', $unix, PDO::PARAM_STR);
             $stmt->bindParam(':date', $date, PDO::PARAM_STR);
             $stmt->bindParam(':selected', $selected, PDO::PARAM_STR);
+            if($stmt->execute()){
+                return true;
+            }
+            return false;
+        }
+        public function postInquiry($arr){
+            $query = "INSERT INTO ".$this->tbl_bit_inquiry." (t_Account_Code,t_Inquiry_Title,t_Inquiry_Details,t_Inquiry_Date) VALUES (:code,:title,:details,:date)";
+            $stmt = $this->conn->prepare($query);
+
+            
+            $code = $_SESSION["user_session"]["u_Account_Code"];
+            $title = $arr["inquiry_title"];
+            $details = $arr["inquiry_details"];
+            $date = date('Y-m-d h:i');
+
+            $stmt->bindParam(':code', $code, PDO::PARAM_STR);
+            $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+            $stmt->bindParam(':details', $details, PDO::PARAM_STR);
+            $stmt->bindParam(':date', $date, PDO::PARAM_STR);
             if($stmt->execute()){
                 return true;
             }

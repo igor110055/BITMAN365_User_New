@@ -39,7 +39,7 @@
 	$output = '';
     $output .= '<div class="card">';
     $output .= '<div class="card-header">';
-    $output .= '1 : 1 문의하기 <button class="inq_reg">문의등록</button>';
+    $output .= '1 : 1 문의하기 <button class="inq_reg">문의등록</button><button class="inq_toggle" id="toggle-inquiry">문의등록</button>';
     $output .= '</div>';
 	$output .= '<div class="table-responsive" style="overflow-y: scroll; height: 550px;">';
     $output .= '<div class="body-header">';
@@ -58,11 +58,16 @@
             $output .= '<tr class="rowaccordion">';
             $output .= '<td>'.$sNum.'</td>';
             $output .= '<td style="text-align: left;">'.$val["t_Inquiry_Title"].'</td>';
-            ($val["t_Inquiry_Status_Id"] == 0) ? $output .= '<td style="color: #FF9300; font-size: 16px;">답변 대기</td>' : $output .= '<td style="color: #1072BA; font-size: 16px;">답변 완료</td>';
-            $output .= '<td>'.$val["t_Inquiry_Date"].'/'.$val["t_Response_Time"].'</td>';
+            ($val["t_Inquiry_Status_Id"] == 0) ? $output .= '<td style="color: #FF9300;">답변 대기</td>' : $output .= '<td style="color: #1072BA;">답변 완료</td>';
+            $output .= '<td>'.$val["t_Inquiry_Date"].' / '.$val["t_Response_Time"].'</td>';
             $output .= '</tr>';
             $output .= '<tr class="rowContent">';
-            $output .= '<td colspan="4">'.$val["t_Inquiry_Details"].'</td>';
+            $output .= '<td style="background: #EEEEEE;">[ 문의 ]</td>';
+            $output .= '<td colspan="3" style="background: #EEEEEE; text-align: left;">'.$val["t_Inquiry_Details"].'</td>';
+            $output .= '</tr>';
+            $output .= '<tr class="rowContent1">';
+            $output .= '<td style="background: #DDDDDE;">[ 답변 ]</td>';
+            $output .= '<td colspan="3" style="background: #DDDDDE; text-align: left;">'.$val["t_Manager_Reply"].'</td>';
             $output .= '</tr>';
             $sNum ++;
         }
@@ -84,11 +89,24 @@
 ?>
 <script>
 	$('.rowContent').hide();
+	$('.rowContent1').hide();
 	$(".inquiry .rowaccordion").click(function(){
-	$(".rowContent").not($(this).next()).hide();
+        $(".rowContent").not($(this).next()).hide();
+        $(".rowContent1").not($(this).next().next()).hide();
 		$(this).next(".rowContent").toggle();
+        $(this).next().next(".rowContent1").toggle();
 	})
     $('.inq_reg').click(function(){
         $("#modal-inquiry_submit").modal('show');
     })
+    $('#toggle-inquiry').click(function(){
+        $(".display_inquiry").fadeIn("slow");
+        $(".card").hide("slow");
+        $(".footer").addClass("fixed-position");
+    });
+    $('.toggle-close').click(function(){
+        $(".display_inquiry").fadeOut("slow");
+        $(".card").show("slow");
+        $(".footer").removeClass("fixed-position");
+    });
 </script>

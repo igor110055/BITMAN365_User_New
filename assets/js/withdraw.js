@@ -35,13 +35,15 @@ $('#withdrawamount').on('change click keyup input paste',(function (event) {
     $.post("./php/api/postWithdraw.php", JSON.stringify(arr), function( response ) {
       $('#modal-withdraw_submit').modal('hide')
       if(response == true){
-        izitoast('Successfully submitted!','Wait for confirmation.','fa fa-check-square-o','green','./withdraw.php')
+        izitoast('성공적으로 제출되었습니다!','확인을 기다립니다.','fa fa-check-square-o','green','./withdraw.php')
+      }else{
+        izitoast('실패!','철수 페이지로 돌아가기.','fa fa-times-circle-o','red','./withdraw.php');
       }
     })
   })
   //fetching user bank info
   $.ajax({
-    "url": "./php/api/admin/getUserBankInfo.php",
+    "url": "./php/api/user/getUserBankInfo.php",
     "type": "GET",
     "contentType": "application/json",
     "async": false,

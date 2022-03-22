@@ -25,7 +25,7 @@
             return $stmt;
         }
         public function getInquiryRowCount(){
-            $query = "SELECT * FROM ".$this->tbl_bit_inquiry." WHERE t_Inquiry_Status_Id IN(1)";
+            $query = "SELECT * FROM ".$this->tbl_bit_inquiry;
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             return $stmt;

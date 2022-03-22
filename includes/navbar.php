@@ -169,11 +169,11 @@
         <div class="form-inline">
             <button type="button" class="btn-mob text-white"><a href="./notice.php" style="text-decoration: none; color: #FFFFFF;">공지사항</a></button>
             <button type="button" class="btn-mob text-white"><a href="./guide.php" style="text-decoration: none; color: #FFFFFF;">이용안내</a></button>
-            <button type="button" class="btn-mob text-white">1:1문의</button>
+            <button type="button" class="btn-mob text-white"><a href="./inquiry.php" style="text-decoration: none; color: #FFFFFF;">1:1문의</a></button>
         </div>
         <!-- next line -->
         <div class="form-inline">
-            <button type="button" class="btn-mob text-orange">FAQ</button>
+            <button type="button" class="btn-mob text-orange"><a href="./faq.php" style="text-decoration: none; color: #FFFFFF;">FAQ</a></button>
             <button type="button" class="btn-mob text-orange"><a href="./deposit.php" style="text-decoration: none; color: #FF9300;">입금신청</a></button>
             <button type="button" class="btn-mob text-orange">출금신청</button>
         </div>

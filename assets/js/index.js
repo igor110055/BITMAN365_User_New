@@ -64,6 +64,9 @@ $(function(){
     $('#navbar-collapse-3').click(function(){
         $('.display_log').toggle();
     });
+    $('#navbar-collapse-4').click(function(){
+        $('.display_inquiry').toggle();
+    });
     //fetching cash balance
     $.ajax({
         "url": "php/api/user/getUserCashBalance.php",

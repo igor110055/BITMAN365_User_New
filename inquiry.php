@@ -71,12 +71,15 @@
             cursor: pointer; 
             color: #FFFFFF;
         }
+        .inq_toggle{
+            display: none;
+        }
         .inline_grp{
             width: 100%;
             margin: 0 auto;
             display: grid;
             grid-gap: 1rem;
-            grid-template-columns: 20% 80%;
+            grid-template-columns: 20% 75%;
             padding: 10px 30px;
         }
         #modal-inquiry_submit{
@@ -95,14 +98,15 @@
         #modal-inquiry_submit .modal-footer{
             border-top: none;
         }
-        #modal-inquiry_submit .btn_title{
+        #modal-inquiry_submit .btn_title,.display_inquiry .btn_title{
             background: #888888;
             border-radius: 10px;
             width: 100%;
             height: 44px;
             color: #FFFFFF;
+            cursor: default;
         }
-        #inquiry_title{
+        #inquiry_title,#inquiry_title_i{
             background: #EEEEEE;
             box-sizing: border-box;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -110,7 +114,7 @@
             width: 100%;
             height: 44px;
         }
-        #inquiry_details{
+        #inquiry_details,#inquiry_details_i{
             background: #EEEEEE;
             box-sizing: border-box;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -118,11 +122,14 @@
             width: 100%;
             height: 210px;
         }
-        #inquiry_details::placeholder,#inquiry_title::placeholder{
+        #inquiry_details::placeholder,#inquiry_title::placeholder,#inquiry_title_i::placeholder,#inquiry_details_i::placeholder{
             text-align: left;
             color: #888888;
         }
-        #modal-inquiry_submit .btn_inquiry_save{
+        #modal-inquiry_submit .modal-notif-title{
+            color: #FFFFFF;
+        }
+        #modal-inquiry_submit .btn_inquiry_save,.display_inquiry .btn_inquiry_save{
             background: #1072BA;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
@@ -135,6 +142,30 @@
         #modal-inquiry_submit .close{
             color: #FFFFFF;
             font-size: 25px;
+        }
+        .display_inquiry{
+            display: none;
+            background: #393E46;
+            z-index: 1;
+            width: 100%;
+            height:500px;
+            padding: 40px 20px 0 20px;
+        }
+        .display_inquiry .toggle-close{
+            margin-top: -30px;
+            color: #FFFFFF;
+            font-size: 30px;
+            float: right;
+        }
+        .fixed-position {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .errortitle,.errordetails,.errortitle_i,.errordetails_i{
+            color: #ED5659;
+            text-align: left;
         }
         @media only screen and (max-width : 360px){
             .page-inquiry{
@@ -149,34 +180,49 @@
                 font-size: 12px;
             }
             .inq_reg{
+                display: none;
                 float: right;
                 font-size: 14px; 
                 padding: 0 10px;
             }
-            #modal-inquiry_submit{
-                padding: 200px 20px;
-            }
-            #modal-inquiry_submit .modal-notif-title{
-                font-size: 20px;
-            }
-            #modal-inquiry_submit .modal-notif-body{
-                font-size: 16px;
-            }
-            .inline_grp{
-                grid-template-columns: 30% 67%;
-                padding: 10px 5px;
-            }
-            #modal-inquiry_submit .modal-body{
-                padding: 5px 5px;
-            }
-            #modal-inquiry_submit .message{
-                font-size: 16px;
-            }
-            #modal-inquiry_submit .btn_inquiry_save{
+            .display_inquiry .btn_inquiry_save{
                 padding: 10px 20px;
                 font-size: 18px;
                 width: 100px;
                 height: 42px;
+            }
+            .display_inquiry{
+                padding: 25px 5px;
+            }
+            .inq_toggle{
+                display: block;
+                float: right; 
+                background: #0093FF; 
+                border-radius: 5px; 
+                font-size: 16px; 
+                padding: 2px 20px; 
+                border: none; 
+                cursor: pointer; 
+                color: #FFFFFF;
+            }
+            .display_inquiry .modal-notif-title,#modal-inquiry_submit .modal-notif-title{
+                color: #FFF200;
+                text-align: center;
+            }
+            .display_inquiry .btn_title{
+                font-size: 14px;
+                width: 70px;
+                padding: 2px 2px;
+            }
+            .display_inquiry .toggle-close{
+                padding-top: 22px;
+                padding-right: 15px;
+            }
+            .inline_grp{
+                grid-template-columns: 20% 75%;
+            }
+            .body-header table tr td{
+                font-size: 2px;
             }
         }
         @media screen and (max-width : 992px){
@@ -192,8 +238,11 @@
                 font-size: 12px;
             }
             .inline_grp{
-                grid-template-columns: 30% 67%;
-                padding: 10px 5px;
+                grid-template-columns: 20% 75%;
+                padding: 5px 10px;
+            }
+            #modal-inquiry_submit .modal-notif-title{
+                color: #FFFFFF;
             }
         }
         @media only screen and (min-width: 480px) and (max-width: 768px){
@@ -202,14 +251,45 @@
                 width: 100%;
             }
             .inline_grp{
-                grid-template-columns: 30% 67%;
-                padding: 10px 5px;
+                grid-template-columns: 20% 75%;
+                padding: 20px 10px;
+            }
+            #modal-inquiry_submit .modal-notif-title{
+                color: #FFFFFF;
             }
         }
     </style>
     <!-- navbar -->
     <?php include __DIR__ . '/includes/navbar.php';?>
-
+    <!-- header -->
+    <?php
+        if(count($_SESSION)){
+            echo '
+                <div class="current_stocks_mobile">
+                    <a href="#"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance"></span> 원</span></a>
+                </div>'
+            ;
+        }
+    ?>
+    <div class="display_inquiry">
+        <span class="toggle-close">&times;</span>
+        <div class="container">
+            <h4 class="modal-title mt-n4 mb-2 modal-notif-title mb-3">1:1 문의하기</h4>
+            <form class="formInquiryMobile" method="POST">
+                <div class="inline_grp">
+                    <button class="btn btn_title" type="button">제목</button>
+                    <input type="text" id="inquiry_title_i" name="inquiry_title" placeholder="제목을 입력해 주세요." class="form-control">
+                    <div class="errortitle_i"></div>
+                </div>
+                <div class="inline_grp">
+                    <button class="btn btn_title" type="button">문의내용</button>
+                    <textarea type="text" id="inquiry_details_i" name="inquiry_details" placeholder="문의내용을 입력해 주세요." class="form-control"></textarea>
+                    <div class="errordetails_i"></div>
+                </div>
+                <center><button class="btn btn_inquiry_save" type="submit">확인</button></center>
+            </form>
+        </div>
+    </div>
     <!-- registration Section -->
     <div class="container page-inquiry">
         <div id="pagination-result">

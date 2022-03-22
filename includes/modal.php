@@ -153,18 +153,22 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <h4 class="modal-title text-white mt-n4 mb-2 modal-notif-title mb-3">1:1 문의하기</h4>
+            <h4 class="modal-title mt-n4 mb-2 modal-notif-title mb-3">1:1 문의하기</h4>
             <div class="modal-body">
                 <div class="container">
-                    <div class="inline_grp">
-                        <button class="btn btn_title" type="button">제목</button>
-                        <input type="text" id="inquiry_title" name="inquiry_title" placeholder="제목을 입력해 주세요." class="form-control">
-                    </div>
-                    <div class="inline_grp">
-                        <button class="btn btn_title" type="button">문의내용</button>
-                        <textarea type="text" id="inquiry_details" name="inquiry_details" placeholder="문의내용을 입력해 주세요." class="form-control"></textarea>
-                    </div>
-                    <center><button class="btn btn_inquiry_save" type="submit">확인</button></center>
+                    <form class="formInquiry" method="POST">
+                        <div class="inline_grp">
+                            <button class="btn btn_title" type="button">제목</button>
+                            <input type="text" id="inquiry_title" name="inquiry_title" placeholder="제목을 입력해 주세요." class="form-control">
+                            <div class="errortitle"></div>
+                        </div>
+                        <div class="inline_grp">
+                            <button class="btn btn_title" type="button">문의내용</button>
+                            <textarea type="text" id="inquiry_details" name="inquiry_details" placeholder="문의내용을 입력해 주세요." class="form-control"></textarea>
+                            <div class="errordetails"></div>
+                        </div>
+                        <center><button class="btn btn_inquiry_save" type="submit">확인</button></center>
+                    </form>
                 </div>
             </div>
         </div>
