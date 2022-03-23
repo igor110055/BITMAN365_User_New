@@ -1,6 +1,16 @@
-    <!-- custom style/script -->
-
-    <!-- header html -->
+    <?php
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: text/html; charset=UTF-8");
+        header("Access-Control-Allow-Methods: POST");
+        header("Access-Control-Max-Age: 3600");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+        include_once 'php/config/Database.php';
+        include_once 'php/class/Getuseripaddress.class.php';
+        $database = new Database();
+        $db = $database->getConnection();
+        $get_ip = new Getuseripaddress($db);
+        $getipinfo = ($get_ip->GetIpAddress() == '192.168.20.10') ? '122.55.196.201' : $get_ip->GetIpAddress();
+    ?>
     <?php include __DIR__ . '/includes/head_html.php';?>
     <?php
         $linkcss = array();
@@ -34,11 +44,12 @@
     </style>
     <!-- navbar -->
     <?php include __DIR__ . '/includes/navbar.php';?>
-
     <!-- registration Section -->
     <div class="container page-signup">
         <h3 class="text-center font-weight-bold signup-title">BITMAN365 회원가입</h3>
         <form method="POST" id="form_register">
+            <input type="hidden" name="domain" value="<?=$_SERVER["SERVER_NAME"]?>">
+            <input type="hidden" name="userip" value="<?=$getipinfo?>">
             <div class="row justify-content-center">
                 <div class="col-sm-10">
                     <div class="form-group">

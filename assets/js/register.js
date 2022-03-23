@@ -163,6 +163,7 @@ $( document ).ready(function() {
         // in the "action" attribute of the form when valid
         submitHandler: function() {
             let formData = $('#form_register').serialize();
+            console.log(formData)
             $.ajax({
                 type: 'POST',
                 url: './php/api/postRegistration.php',

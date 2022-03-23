@@ -1,5 +1,6 @@
 $(function(){
-    $('#btnlogout').click(function(){
-        window.location.href="./logout.php"
+    $('.btnlogout').click(function(){
+        var code = $(this).data('code');
+        window.location.href="./logout.php?code="+code
     })
 })

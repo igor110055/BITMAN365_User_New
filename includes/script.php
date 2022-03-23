@@ -6,6 +6,7 @@
 <script src="plugins/iziToast-master/dist/js/iziToast.min.js"></script>
 <script src="assets/js/login.js"></script>
 <script src="assets/js/index.js"></script>
+<script src="assets/js/logout.js"></script>
 <script src="assets/js/function_izitoast.js"></script>
 <?php
     if (isset($scriptjs) || is_array(@$scriptjs)) {

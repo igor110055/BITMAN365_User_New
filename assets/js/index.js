@@ -38,20 +38,20 @@ $(function(){
         })
     })
     //toggle inqfaq
-    $('.dropdown-inqfaq').mouseover(function() {
-        $('.inquiryfaq').show();
+    $('.dropdown-inquiryfaq').mouseover(function() {
+        $('.inqfaq').show();
     })
 
-    $('.dropdown-inqfaq').mouseout(function() {
+    $('.dropdown-inquiryfaq').mouseout(function() {
         t = setTimeout(function() {
-            $('.inquiryfaq').hide();
+            $('.inqfaq').hide();
         }, 100);
 
-        $('.inquiryfaq').on('mouseenter', function() {
-            $('.inquiryfaq').show();
+        $('.inqfaq').on('mouseenter', function() {
+            $('.inqfaq').show();
             clearTimeout(t);
         }).on('mouseleave', function() {
-            $('.inquinquiryfaqiryfaq').hide();
+            $('.inqfaq').hide();
         })
     })
     
@@ -63,9 +63,6 @@ $(function(){
     });
     $('#navbar-collapse-3').click(function(){
         $('.display_log').toggle();
-    });
-    $('#navbar-collapse-4').click(function(){
-        $('.display_inquiry').toggle();
     });
     //fetching cash balance
     $.ajax({
