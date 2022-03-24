@@ -9,6 +9,7 @@
         private $tbl_bit_cashin = "tbl_bit_transactions_cashin_details";
         private $tbl_bit_cashout = "tbl_bit_transactions_withdraw_details";
         private $tbl_bit_user_log = "tbl_bit_user_logs";
+        private $tbl_bit_trans_history = "tbl_bit_transaction_histories";
 
         //properties  
 		public function __construct($db){
@@ -153,33 +154,76 @@
         }
 
         public function postDeposit($data){
-            $query = "INSERT INTO ".$this->tbl_bit_cashin." (t_Account_Code, t_Total_Amount_Cash_In, t_Cashin_Date) VALUES (:code, :depamount, :date)";
+            $query = "INSERT INTO ".$this->tbl_bit_cashin." (t_Account_Code, t_Total_Amount_Cash_In, t_Cashin_Date) VALUES (:code, :depamount, :date);
+            INSERT INTO ".$this->tbl_bit_trans_history." (h_Transaction_Type, h_Account_Code, h_Event, h_Contract_Time, h_Plus, h_Minus, h_Current_Balance, h_Processing_Time) VALUES (:Transaction_Type, :Account_Code, :Event, :Contract_Time, :Plus, :Minus, :Current_Balance, :Process_Time)";
             $stmt = $this->conn->prepare($query);
 
+            $balance = $this->getUserCashBalance();
             $code = $_SESSION["user_session"]["u_Account_Code"];
             $depamount = $data[0]->depositamount;
-            $date = date('Y-m-d h:i');
+            $date = date('Y-m-d h:i:s');
+            //////history
+            $transtype = 'Deposit';
+            $event = '증금';
+            $ctime = '-';
+            $plus = $depamount;
+            $minus = 0;
+            $cbalance = (count($balance) > 0) ? $balance[0]["t_Amount_in_Total"] : '0';
 
             $stmt->bindParam(':code', $code, PDO::PARAM_STR);
             $stmt->bindParam(':depamount', $depamount, PDO::PARAM_STR);
             $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+            $stmt->bindParam(':Transaction_Type', $transtype, PDO::PARAM_STR);
+            $stmt->bindParam(':Account_Code', $code, PDO::PARAM_STR);
+            $stmt->bindParam(':Event', $event, PDO::PARAM_STR);
+            $stmt->bindParam(':Contract_Time', $ctime, PDO::PARAM_STR);
+            $stmt->bindParam(':Plus', $plus, PDO::PARAM_STR);
+            $stmt->bindParam(':Minus', $minus, PDO::PARAM_STR);
+            $stmt->bindParam(':Current_Balance', $cbalance, PDO::PARAM_STR);
+            $stmt->bindParam(':Process_Time', $date, PDO::PARAM_STR);
             if($stmt->execute()){
                 return true;
             }
             return false;
         }
 
+        public function getUserCashBalance(){
+            $query = "SELECT * FROM ".$this->tbl_bit_trans_headers." WHERE t_Account_Code  = '".$_SESSION["user_session"]["u_Account_Code"]."' LIMIT 1"; 
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+        }
+
         public function postWithdraw($data){
-            $query = "INSERT INTO ".$this->tbl_bit_cashout." (t_Account_Code, t_Total_Amount_Cash_Out, t_Cashout_Date) VALUES (:code, :withamount, :date)";
+            $query = "INSERT INTO ".$this->tbl_bit_cashout." (t_Account_Code, t_Total_Amount_Cash_Out, t_Cashout_Date) VALUES (:code, :withamount, :date);
+            INSERT INTO ".$this->tbl_bit_trans_history." (h_Transaction_Type, h_Account_Code, h_Event, h_Contract_Time, h_Plus, h_Minus, h_Current_Balance, h_Processing_Time) VALUES (:Transaction_Type, :Account_Code, :Event, :Contract_Time, :Plus, :Minus, :Current_Balance, :Process_Time)";
             $stmt = $this->conn->prepare($query);
 
+            $balance = $this->getUserCashBalance();
             $code = $_SESSION["user_session"]["u_Account_Code"];
             $withamount = $data[0]->withdrawtamount;
-            $date = date('Y-m-d h:i');
+            $date = date('Y-m-d h:i:s');
+            //////history
+            $transtype = 'Withdraw';
+            $event = '출금';
+            $ctime = '-';
+            $plus = 0;
+            $minus = $withamount;
+            $cbalance = $balance[0]["t_Amount_in_Total"];
 
             $stmt->bindParam(':code', $code, PDO::PARAM_STR);
             $stmt->bindParam(':withamount', $withamount, PDO::PARAM_STR);
             $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+            ////history
+            $stmt->bindParam(':Transaction_Type', $transtype, PDO::PARAM_STR);
+            $stmt->bindParam(':Account_Code', $code, PDO::PARAM_STR);
+            $stmt->bindParam(':Event', $event, PDO::PARAM_STR);
+            $stmt->bindParam(':Contract_Time', $ctime, PDO::PARAM_STR);
+            $stmt->bindParam(':Plus', $plus, PDO::PARAM_STR);
+            $stmt->bindParam(':Minus', $minus, PDO::PARAM_STR);
+            $stmt->bindParam(':Current_Balance', $cbalance, PDO::PARAM_STR);
+            $stmt->bindParam(':Process_Time', $date, PDO::PARAM_STR);
             if($stmt->execute()){
                 return true;
             }

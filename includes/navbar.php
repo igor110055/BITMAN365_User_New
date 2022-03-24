@@ -205,6 +205,6 @@
             <button type="button" class="btn btn_log_mobile">거래내역</button>
             <button type="button" class="btn btn_log_mobile">개인정보 설정</button>
         </div>
-        <a href="./logout.php" class="btn btn_log_mobile btn_logout">입출금 내역</a>
+        <a href="#" data-code="<?=$_SESSION["user_session"]["u_Account_Code"]?>" class="btn btn_log_mobile btn_logout">입출금 내역</a>
     </div>
 </div>
