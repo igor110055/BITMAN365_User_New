@@ -92,13 +92,15 @@
             U.u_Access_Code,
             U.u_Bank_Holder_Name,
             U.u_Account_Number,
+            U.u_UseNoUse,
+            U.u_isAdminUser,
             H.t_Amount_in_Total,
             H.t_Currency
             FROM ".$this->tbl_bit_users." AS U 
             JOIN ".$this->tbl_bit_access." A ON U.u_Access_Code = A.m_Access_Code 
-            LEFT JOIN ".$this->tbl_bit_trans_headers." H ON U.u_Account_Code = H.t_Account_Code 
+            LEFT JOIN ".$this->tbl_bit_trans_headers." H ON U.u_Account_Code = H.t_Account_Code
             WHERE U.u_Account_Code = '$account_code' AND U.u_Password = '$password'
-            AND U.u_Status_Id NOT IN(1) LIMIT 1";
+            AND U.u_Status_Id NOT IN(1) AND U.u_UseNoUse IN(1) AND U.u_isAdminUser IN(0) LIMIT 1";
 			$stmt = $this->conn->prepare($query);
 			$stmt->execute();
             $num_row = $stmt->rowCount();

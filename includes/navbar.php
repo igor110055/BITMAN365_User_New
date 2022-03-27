@@ -5,7 +5,7 @@
         <a class="navbar-brand-mobile" href="./">BITMAN365</a>
     </button>
     <?php
-        if(count(@$_SESSION)){
+        if(@$_SESSION["user_session"]){
             echo '
                 <a href="#"><img src="assets/icons/ic_round-local-post-office.png" class="ic_round_1"></a>
                 <button class="navbar-toggler dropdown-toggle" type="button" id="navbar-collapse-3">
@@ -23,7 +23,7 @@
     <!-- 1920 pixels -->
     <div class="collapse navbar-collapse">
         <?php
-            if(count(@$_SESSION)){
+            if(@$_SESSION["user_session"]){
             echo '
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -112,7 +112,7 @@
         <span class="nav_layout_btn">
             <ul class="navbar-nav mr-auto">
                 <?php
-                    if(count($_SESSION)){
+                    if(@$_SESSION["user_session"]){
                         echo '<li class="nav-item">
                                 <a href="#" style="text-decoration: none;"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance"></span>원</span></a>
                             </li>
@@ -134,7 +134,7 @@
                                             <button type="button" class="btn" style="width: 100%; margin-bottom: 10px; text-align: left; font-weight: 700;">개인정보 설정</button>
                                         </div>
                                             <center>
-                                                <a href="#" data-code="'.$_SESSION["user_session"]["u_Account_Code"].'" type="button" class="btn btnlogout" style="border-radius: 10px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); box-sizing: border-box; border: 0.5px solid #FFFFFF; background: #f1f1f1; padding: 10px; height: 40px; width: 120px;">
+                                                <a href="#" data-code="'.@$_SESSION["user_session"]["u_Account_Code"].'" type="button" class="btn btnlogout" style="border-radius: 10px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); box-sizing: border-box; border: 0.5px solid #FFFFFF; background: #f1f1f1; padding: 10px; height: 40px; width: 120px;">
                                                     로그아웃
                                                 </a>
                                             </center>
