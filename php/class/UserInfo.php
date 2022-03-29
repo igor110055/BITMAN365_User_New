@@ -5,12 +5,20 @@
         private $tbl_bit_notice = "tbl_bit_notice";
         private $tbl_bit_guide = "tbl_bit_guide";
         private $tbl_bit_inquiry = "tbl_bit_inquiries";
+        private $tbl_bit_faq = "tbl_bit_faqs";
         
         //properties  
 		public function __construct($db){
 			$this->conn = $db;
 		}
         
+        ///rowcount
+        public function getFAQRowCount(){
+            $query = "SELECT * FROM ".$this->tbl_bit_faq." WHERE f_Deleted_Date IS NULL";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
         ///rowcount
         public function getGuideRowCount(){
             $query = "SELECT * FROM ".$this->tbl_bit_guide." WHERE g_IsPublic IN(1)";
@@ -32,6 +40,10 @@
         }
 
         //execute datarow
+        public function getFAQList(){
+            $query = "SELECT * FROM ".$this->tbl_bit_faq." WHERE f_Deleted_Date IS NULL ORDER BY f_Updated_Date DESC";
+            return $query;
+        }
         public function getNoticeList(){
             $query = "SELECT * FROM ".$this->tbl_bit_notice." WHERE n_IsPublic IN(1) ORDER BY n_Registration_Time DESC";
             return $query;

@@ -1,111 +1,1116 @@
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-/* Styles */
+@media (max-width: 1290px) {
+  .footer{
+    padding: 0 14.66%;
+  }
+  .display_nonlog{
+    display: none;
+  }
+  .display_log{
+    display: none;
+  }
+}
+@media (max-width: 1140px) {
+  .nav-link{
+    font-size: 14px;
+  }
+  .btn_group_nav button{
+    width: 87px;
+    padding: 5px 5px;
+  }
+  .dropdown-menu{
+    margin-top: 14px;
+  }
+  .jumbotron.headers{
+    padding: 30px 8.33%;
+  }
+  .jumbotron.trading_title_details{
+    margin: 0;
+    padding: 15px 8.33%;
+    background: #FFFFFF;
+    height: 210px;
+  }
+  .trading_title{
+    font-size: 17px;
+  }
+  .trading_subtitle{
+      font-size: 11px;
+  }
+  .tradings {
+      grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+  .card-trading-title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 19px;
+      margin: -35px 0 0 30px;
+      position: absolute;
+  }
+  .card-trading-subtitle{
+      font-size: 11px;
+      width: 87%;
+  }
+  .jumbotron.graph{
+    padding: 30px 8.33%;
+  }
+  .navbar-collapse-1-mobile{
+    padding: 200px 200px;
+  }
+  .footer{
+    padding: 0 8.33%;
+  }
+  .display_nonlog{
+    display: none;
+  }
+  .display_log{
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .current_stocks_mobile{
+    background-color: #545454;
+    height: 36px;
+    display: block;
+  }
+  .display_nonlog{
+    padding: 50px 200px;
+    position: fixed;
+  }
+  .display_log{
+    padding: 100px 200px;
+    position: fixed;
+  }
+  .btn_log_mobile{
+    width: 100%;
+  }
+  .btn_logs_mobile{
+    padding: 10px 80px;
+  }
+  .soung_img{
+    float: right;
+  }
+}
+@media (max-width: 778px) {
+  .jumbotron.headers{
+    padding: 30px 4.11%;
+  }
+  .header_title{
+    font-size: 16px;
+    width: 300px;
+  }
+  .header_subtitle{
+    font-size: 12px;
+    width: 300px;
+  }
+  .jumbotron.trading_title_details{
+    margin: 0;
+    padding: 15px 4.11%;
+    background: #FFFFFF;
+    height: 240px;
+  }
+  .trading_title{
+      font-size: 16px;
+  }
+  .trading_subtitle{
+      font-size: 12px;
+  }
+  .tradings {
+      grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+  .card-trading-title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 19px;
+      margin: -35px 0 0 30px;
+      position: absolute;
+  }
+  .card-trading-subtitle{
+      font-size: 9px;
+      width: 87%;
+  }
+  .btn-white{
+    margin: 30px 6.11%; 
+  }
+  .current_stocks_mobile{
+    background-color: #545454;
+    height: 36px;
+    display: block;
+  }
+  .jumbotron.graph{
+    padding: 15px 4.11%;
+  }
+  .header_graph_cl{
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .header_graph{
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+  }
+  .navbar-collapse-1-mobile{
+    padding: 200px 100px;
+  }
+  .display_nonlog{
+    padding: 50px 100px;
+    position: fixed;
+  }
+  .display_log{
+    position: fixed;
+    padding: 130px 150px;
+  }
+  .btn_log_mobile{
+    width: 100%;
+  }
+  .layout_bg{
+    padding: 10px 20px;
+    width: 50%;
+  }
+  .btn_logs_mobile{
+    margin: 10px 50px;
+  }
+  .soung_img{
+    float: right;
+  }
 }
 
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-/* Styles */
+@media (max-width: 600px) {
+  .jumbotron.headers{
+    height: 160px;
+    padding: 10px 4.11%;
+  }
+  .jumbotron .header_grid{
+    grid-template-columns: 100%;
+  }
+  .header_title{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  .header_subtitle{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 10px;
+  }
+  .header_btn{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+  }
+  .btn-white{
+    height: 50px;
+    font-size: 20px;
+    margin-top: 0px;
+  }
+  .jumbotron.trading_title_details{
+    height: 100%;
+    padding: 10px 4.11%;
+  }
+  .trading_title{
+    font-size: 18px;
+  }
+  .trading_subtitle{
+      font-size: 14px;
+  }
+  .tradings {
+      grid-template-columns: 100%;
+  }
+  .card-trading-title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      margin: -35px 0 0 30px;
+      position: absolute;
+  }
+  .card-trading-subtitle{
+      font-size: 12px;
+      width: 100%;
+  }
+  .current_stocks_mobile{
+    background-color: #545454;
+    height: 36px;
+    display: block;
+  }
+  .jumbotron.graph{
+    padding: 10px 4.11%;
+  }
+  .header_graph_cl{
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .header_graph{
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+  }
+  .footer_brand .footer_logo{
+    font-size: 45px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .footer_brand .footer_sub_title{
+      display: none;
+  }
+  .navbar-collapse-1-mobile{
+    padding: 200px 100px;
+  }
+  .display_nonlog{
+    padding: 50px 100px;
+    position: fixed;
+  }
+  .display_log{
+    padding: 130px 150px;
+    position: fixed;
+  }
+  .btn_logs_mobile{
+    margin: 10px 20px;
+  }
+  .btn_log_mobile{
+    width: 100%;
+  }
+  .layout_bg{
+    padding: 10px 20px;
+  }
+  .soung_img{
+    float: right;
+  }
 }
 
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-/* Styles */
+@media (max-width: 479px){
+  .header_btn{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+  }
+  .jumbotron.headers{
+    padding: 20px 4.11%;
+  }
+  .header_title{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .header_subtitle{
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .btn-white{
+    height: 40px;
+    font-size: 18px;
+  }
+  .current_stocks_mobile{
+    background-color: #545454;
+    height: 36px;
+    display: block;
+  }
+  .header_graph_cl{
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .display_nonlog{
+    position: fixed;
+    padding: 50px 10px;
+  }
+  .display_log{
+    position: fixed;
+    padding: 130px 20px;
+  }
+  .layout_bg{
+    padding: 10px 20px;
+  }
+  .btn_log_mobile{
+    width: 95%;
+  }
+  .header_graph{
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+  }
+  .navbar-collapse-1-mobile{
+    padding: 200px 20px;
+  }
+  .header_graph_title{
+    font-size: 16px;
+  }
+  .header_graph_subtitle{
+    font-size: 10px;
+  }
+  .footer_brand .footer_logo{
+    font-size: 45px;
+    text-align: center;
+  }
+  .footer_brand .footer_sub_title{
+      display: none;
+  }
+  .btn_logs_mobile{
+    margin: 10px 10px;
+  }
+  .soung_img{
+    float: right;
+  }
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-/* Styles */
+@media (min-width : 1150px){
+  /* Styles */
+  /* .navbar-brand{
+      display: none;
+  }
+  .jumbotron.headers{
+      height: 188px;
+      background: url("../img/unsplash_7LoWpCOAn6k.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-bottom: 8px solid rgba(58, 58, 58, 0.2);
+      box-sizing: border-box;
+      box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
+      padding: 23px;
+  }
+  .header_title{
+      color: #FFFFFF;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 23px;
+      text-align: center;
+      width: 100%;
+      margin: -10px 0 0 0;
+  }
+  .header_subtitle{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFF;
+      width: 100%;
+      margin: 10px 0 0 0;
+  }
+  .btn-white{
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #AED3EA;
+      box-sizing: border-box;
+      box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      height: 40px;
+      width: 98px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      margin: 10px 0 0 0;
+  }
+  .header_btn{
+      text-align: center !important
+  }
+  .tradings{
+      height: 470px;
+      background-color: #FFFFFF;
+      padding: 20px;
+  }
+  .trading_digital{
+      margin-top: -15px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 23px;
+  }
+  .trading_digital-subtitle{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: left;
+      color: #666666;
+      padding-top: 0;
+  }
+  .cards-trading {
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 1rem;
+      margin: 0 0 4.60rem 0;
+      text-align: left;
+  }
+  .cards-trading { 
+      grid-template-columns: repeat(1, 1fr); 
+  }
+  .card-trading {
+      width: 100%;
+      height: 48px;
+      word-wrap: break-word;
+      margin: 10px 60px 20px 0;
+  }
+  .card-trading-title{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      margin: -35px 20px 0 30px;
+  }
+  .card-trading-subtitle{
+      color: #888888;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      margin: -10px 0 0 30px;
+  }
+  .graph{
+      padding: 20px 0 0 0;
+      margin-bottom: 20px;
+  }
+  .cards_graph {
+      width: 100%;
+      display: grid;
+      grid-gap: 1.16rem;
+      text-align: center;
+      margin: 0;
+  }
+  .cards_graph { 
+      grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+  }
+  .card_graph {
+      padding: 1rem;
+      width: 156px;
+      height: 198px;
+      word-wrap: break-word;
+      box-sizing: border-box;
+      box-shadow: 2px 2px 0px rgba(223, 222, 222, 0.85);
+  }
+  .carbon_chart-candlestick,.ri_24-hours-fill,.flat-color-icons_combo-chart,.gala_secure{
+      width: 55.08px;
+      height: 61.48px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -5px;
+  }
+  .carbon_chart-title,.ri_24-title,.flat-color-title,.gala_secure-title{
+      padding: 10px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+  }
+  .carbon_chart-subtitle,.ri_24-subtitle,.flat-color-subtitle,.gala_secure-subtitle{
+      padding: 0 15px 0 15px;
+      text-align: left;
+      color: #888888;
+      margin-top: -20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+  }
+  .navbar-nav,.nav_layout_btn{
+      display: none;
+  }
+  .display_nonlog,.display_log,.navbar-collapse-1-mobile{
+      position: absolute;
+  }
+  .current_stocks_mobile{
+      background-color: #545454;
+      height: 36px;
+      display: block;
+  }
+  .dollar_mint_icon_mob{
+      text-align: center !important;
+  }
+  .ic_round_1{
+      display: block;
+  }
+  .page-signup{
+      margin-top: 8px;
+  }
+  .signup-title{
+      font-size: 20px;
+  }
+  .signup-subtitle{
+      font-size: 20px;
+  }
+  .s_account_code{
+      height: 15px;
+  }
+  .text_signup, .error_id_chk, .error_nn_chk, .custom-select-lg{
+      font-size: 12px;
+  }
+  #modal-notif{
+      top: 181px;
+      left: 25px;
+      right: 25px;
+  }
+  #modal-notif .modal-dialog{
+      width: 290px;
+      height: 200px; 
+  }
+  #modal-notif .modal-notif-title{
+      font-size: 20px;
+  }
+  #modal-notif .modal-notif-body{
+      font-size: 18px;
+  }
+  #modal-notif .btn-primary{
+      width: 98px;
+      height: 44px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+  }
+  .page_btc{
+      padding-bottom: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+  .card_btc {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-gap: 1em 1em;
+      grid-auto-flow: row dense;
+  }
+  .card_btc_target {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-gap: 1em 1em;
+      grid-auto-flow: row dense;
+  }
+  .card.btc_header{
+      background: #393E46;
+      box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px 10px 0px 0px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-gap: 1em 1em;
+      grid-auto-flow: row dense;
+      padding: 20px 20px 20px 20px;
+  }
+  .c_header_l{
+      text-align: center;
+      font-size: 18px;
+      margin-top: -8px;
+      padding: 0;
+  }
+  .c_header_r{
+      display: none;
+  }
+  .card-footer{
+      font-weight: 700;
+      display: block;
+  }
+  .body_trading{
+      padding: 10px;
+  }
+  .btn_trading_red, .btn_trading_blue{
+      width: 120px;
+      height: 36px;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      color: #FFFFFF;
+      font-size: 16px;
+  }
+  .decition_time,.price{
+      margin-bottom: 10px;
+      margin-left: 20px;
+      padding: 2px;
+      color: #FFFFFF;
+      font-weight: 700;
+      width: 74px;
+      height: 24px;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 0px;
+  }
+  .time_result,.price_result{
+      margin-bottom: 10px;
+      margin-right: 20px;
+      padding: 2px;
+      font-weight: 700;
+      font-size: 14px;
+      width: 167px;
+      text-align: center;
+      height: 24px;
+      border-radius: 0px;
+  }
+  .time_result{
+      color: #FFFFFF;
+  }
+  .price_result{
+      color: #FFF200;
+  }
+  .btn-signup_grp{
+      width: 99px;
+      height: 44px;
+      box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      margin-left: 10px;
+      font-size: 16px;
+      padding: 10px;
+  }
+  .footer{
+      height: 56px;
+      padding-top: 10px;
+      color: #FFFFFF;
+  }
+  .footer .sub-footer{
+      display: none;
+      
+  }
+  .footer-logo{
+      font-size: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+  } */
 }
-
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-/* Styles */
-}
-
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-/* Styles */
-}
-/**********
-iPad 3
-**********/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
+@media (min-width : 992px){
+  .navbar{
+    display: block;
+  }
 }
 /* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-/* Styles */
-}
+/* @media only screen and (min-width: 480px) and (max-width: 768px){
+  .navbar-brand{
+      display: none;
+  }
+  .display_nonlog,.display_log,.navbar-collapse-1-mobile,.navbar-collapse{
+      position: absolute;
+  }
+  .nav-link{
+      font-size: 16px;
+  }
+  .btn-primary{
+      margin-right: 3px;
+  }
+  .trading_digital{
+      font-size: 30px;
+      text-align: center;
+  }
+  .trading_digital-subtitle{
+      font-size: 16px;
+  }
+  .tradings{
+      padding: 60px;
+  }
+  .card-trading {
+      width: 190px;
+      height: 128px;
+      margin-right: 10px;
+  }
+  .card-trading-title{
+      font-size: 14px;
+  }
+  .card-trading-subtitle{
+      font-size: 14px;
+  }
+  .jumbotron.headers{
+      height: 376px;
+      padding: 40px;
+  }
+  .header_title{
+      color: #FFFFFF;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 47px;
+      text-align: center;
+      width: 100%;
+      margin: -10px 0 0 0;
+  }
+  .header_subtitle{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 19px;
+      color: #FFFFFF;
+      width: 100%;
+      margin: 40px 0 0 0;
+  }
+  .btn-white{
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #AED3EA;
+      box-sizing: border-box;
+      box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 42px;
+      margin: 10px;
+      width: 300px;
+      height: 90px;
 
-/* Large screens ----------- */
-@media only screen  and (min-width : 1824px) {
-/* Styles */
-}
+  }
+  .header_btn{
+      text-align: center!important
+  }
+  .mobile_nav_collapse{
+      margin: 40px 20px 0 20px;
+  }
+  .current_stocks_mobile{
+      background-color: #545454;
+      height: 36px;
+      margin-bottom: -20px;
+      margin-top: 0;
+      display: block;
+  }
+  .btn-mob{
+      border-radius: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 8px;
+      width:198px;
+      height: 70px;
+      font-size: 24px;
+  }
+  .graph{
+      padding: 20px 0 10px 50px;
+      margin-bottom: 20px;
+  }
+  .card_graph {
+      width: 280px;
+      height: 350px;
+  }
+  .cards_graph {
+      width: 100%;
+      display: grid;
+      grid-gap: 0.85rem;
+      text-align: center;
+  }
+  .cards_graph { 
+      grid-template-columns: repeat(auto-fit, minmax(330px, 2fr));
+  }
+  .form_login_mobile{
+      padding: 50px 120px 0 120px;
+  }
+  .ic_round_1{
+      display: block;
+      margin-left: 590px;
+  }
+  .display_log{
+      padding: 120px 160px 0 160px;
+      margin: 0;
+  }
+  .display_log img{
+      padding: 0 0 0 280px;
+  }
+  .rec_point{
+      text-align: left;
+      padding-top: 8px;
+      padding-left: 60px;
+      padding-bottom: 12px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #888888;
+  }
+  .btn_log_mobile{
+      background: #F7F7F7;
+      border-radius: 10px;
+      width: 100%;
+      height: 44px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: #333333;
+      text-align: left;
+      margin-bottom: 5px;
+  }
+  .display_log .layout_bg{
+      background: #C4C4C4;
+      border-radius: 10px;
+      width: 100%;
+      padding: 7px 5px 5px 5px;
+  }
+  .display_log .btn_logout{
+      background: transparent;
+      border-radius: 10px;
+      border: 1px solid #FFFFFF;
+      width: 120px;
+      height: 60px;
+      color: #888888;
+      text-align: center;
+      font-size: 14px;
+      margin: 20px 65px 0 180px;
+      padding-left: 20px;
+  }
+  .page_btc{
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+  .card_btc {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-gap: 1em 1em;
+      grid-auto-flow: row dense;
+      padding: 30px 100px 20px 100px;
+  }
+  .card.btc_header{
+      background: #393E46;
+      box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px 10px 0px 0px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-gap: 1em 1em;
+      grid-auto-flow: row dense;
+      padding: 20px 20px 20px 20px;
+  }
+  .c_header_l{
+      text-align: center;
+      font-size: 18px;
+  }
+  .c_header_r{
+      display: none;
+  }
+  .card-footer{
+      display: none;
+  }
+  .body_trading{
+      padding: 10px;
+  }
+  .btn-signup_grp{
+      font-size: 20px;
+  }
+  .footer{
+      background-color: #393E46;
+      height: 120px;
+  }
+  .footer{
+      height: 120px;
+      padding-top: 25px;
+      color: #FFFFFF;
+      text-align: center;
+  }
+  .footer .sub-footer{
+      display: none;
+  }
+  .footer-logo{
+      font-size: 48px;
+  }
+} */
+/* Desktops and laptops ----------- */
+/* @media only screen  and (min-width : 1200px) {
 
-/* iPhone 4 ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
-}
-
-/* iPhone 5 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-/* iPhone 6 ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-/* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-/* Samsung Galaxy S3 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
-}
-
-/* Samsung Galaxy S4 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
-}
-
-/* Samsung Galaxy S5 ----------- */
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
-}
-
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
-}
+  .nav-link{
+      font-size: 16px;
+  }
+  .jumbotron.headers{
+      height: 220px;
+  }
+  .jumbotron-fluid{
+      padding-left: 10.01%;
+      padding-right: 10.01%;
+  }
+  .header_title{
+      font-size: 30px;
+      padding-right: 20px;
+      margin-top: 15px;
+  }
+  .header_btn{
+      text-align: right!important
+  }
+  .card_graph {
+      width: 210px;
+      height: 250px;
+  }
+  .cards_graph {
+      width: 100%;
+      display: grid;
+      grid-gap: 1.5rem 1.5rem;
+      text-align: center;
+      margin: 0;
+      grid-template-columns: 22% 22% 22% 22%;
+  }
+  .btn-primary{
+      margin-right: 3px;
+  }
+  .btn-white{
+      margin-right: 20px;
+      margin-top: -210px;
+  }
+  .trading_digital-subtitle{
+      width: 100%;
+      padding-right: 30px;
+  }
+  .page-signup{
+      padding-left: 24.66%;
+      padding-right: 24.66%;
+  }
+  .btn-signup_grp{
+      font-size: 20px;
+  }
+  .page_btc{
+      margin-top: 130px;
+      padding-left: 20px;
+      padding-right: 35px;
+  }
+  .card_btc {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      grid-gap: 1em 1em;
+      grid-auto-flow: row dense;
+  }
+  .cards-trading {
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 1rem;
+      margin: 0 0 4.60rem 0;
+      text-align: left;
+  }
+  .cards-trading { 
+      grid-template-columns: repeat(3, 1fr); 
+  }
+  .card-trading {
+      width: 268px;
+      height: 128px;
+      word-wrap: break-word;
+      margin-left: 0;
+      margin-right: 10px;
+  }
+  .card-footer{
+      display: none;
+  }
+  .footer{
+      background-color: #393E46;
+      height: 120px;
+  }
+  .footer{
+      height: 120px;
+      padding-top: 25px;
+      color: #FFFFFF;
+      text-align: center;
+  }
+  .footer .sub-footer{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      padding: 34px 0 0 230px;
+      position: absolute;
+      width: 100%;
+      display: block;
+      margin-left: 55px;
+  }
+  .footer-logo{
+      font-size: 48px;
+  }
+} */
+/* @media only screen  and (min-width : 1920px) {
+  .container {
+      max-width: 1640px;
+  }
+  .jumbotron-fluid{
+      padding-left: 18.20%;
+      padding-right: 18.20%;
+  }
+  .card-trading {
+      width: 268px;
+      height: 128px;
+      word-wrap: break-word;
+      margin-left: 0;
+  }
+  .nav-link{
+      font-size: 24px;
+  }
+  .jumbotron.headers{
+      padding: 10px 350px 10px 350px;
+  }
+  .header_title{
+      margin-top: 10px;
+  }
+  .header_btn{
+      text-align: right!important
+  }
+  .btn-white{
+      margin-right: 40px;
+      margin-top: -150px;
+  }
+  .card_graph {
+      width: 270px;
+      height: 250px;
+  }
+  .cards_graph {
+      width: 100%;
+      display: grid;
+      grid-gap: 1.8rem 1.8rem;
+      text-align: center;
+      margin: 0;
+      grid-template-columns: 22% 22% 22% 22%;
+      padding-top: -50px;
+  }
+  .page-signup{
+      margin-top: 30px;
+      margin-bottom: 0;
+      padding-left: 20.23%;
+      padding-right: 20.23%;
+  }
+  .page_btc{
+      margin-top: 130px;
+      padding-left: 252px;
+      padding-right: 252px;
+  }
+  .card_btc {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      grid-gap: 1em 1em;
+      grid-auto-flow: row dense;
+  }
+  .btn-signup_grp{
+      font-size: 20px;
+  }
+  .btn-primary,.nav-item{
+      margin-left: 35px;
+  }
+  .card-footer{
+      display: none;
+  }
+  .footer{
+      background-color: #393E46;
+      height: 120px;
+  }
+  .footer{
+      height: 120px;
+      padding-top: 25px;
+      color: #FFFFFF;
+      text-align: center;
+  }
+  .footer .sub-footer{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      padding: 34px 0 0 230px;
+      position: absolute;
+      width: 100%;
+      margin-left: 112px;
+  }
+  .footer-logo{
+      font-size: 48px;
+  }
+} */

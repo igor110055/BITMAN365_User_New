@@ -23,7 +23,7 @@
 ?>
     <style>
         .page_btc{
-            margin-top: 12px;
+            margin: 12px 16.66%;
         }
         .navbar-collapse-1-mobile{
             padding: 200px 20px 0 20px;
@@ -178,8 +178,41 @@
         }
     ?>
     <!-- btc Section -->
-    <div class="container-fluid page_btc">
-        <div class="card_btc">
+    <div class="page_btc">
+        <div class="game_grid">
+            <div class="game_details">
+                <div class="game_title">
+                    비트코인 BTC / USD 1분
+                    <span class="game_title_timer">남은 거래 시간 : <span class="initializeTime"><span class="timeclock"></span></span></span>
+                </div>
+                <div class="game_field">
+                    <div class="candle_chart_field">
+                        <div id="candle_chart" style="width: 100%; height: 100%;"></div>
+                    </div>
+                    <div class="text_result">
+                        <p class="results">거래 결과</p>
+                        <div style="text-align: center;" class="rowcol">
+                        <span class="decition_time">결정시간</span>
+                        <span class="time_result"></span>
+                        </div>
+                        <div style="text-align: center;" class="rowcol1">
+                        <span class="price">결정시간</span>
+                        <span class="price_result"></span>
+                        </div>
+                        <p id="text_title_result"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="betting_details">
+                <div class="betting_title">
+                    TRADING
+                </div>
+                <div class="betting_field">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- <div class="card_btc">
             <div class="card_item data_result">
                 <div class="card btc_header">
                     <div class="c_header_l">비트코인 BTC / USD 1분</div>
@@ -264,8 +297,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card_btc_target" id="reloadPage">
+        </div> -->
+        <!-- <div class="card_btc_target" id="reloadPage">
             <div class="card_item">
                 <div class="card btc_header_trade">
                     <div class="c_header_trade" style="text-align: center; padding-top: 8px;">비트코인 BTC / USD 출목표</div>
@@ -319,7 +352,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     
     <!-- modal -->

@@ -1,12 +1,8 @@
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <span class="footer-logo">BITMAN365</span>
-            </div>
-            <div class="col-lg-6 sub-footer">
-                <h6>BITMAN365 &copy; all rights reserved</h6>
-            </div>
+    <div class="footer_grid">
+        <div class="footer_brand">
+            <span class="footer_logo">BITMAN365</span>
+            <span class="footer_sub_title">BITMAN365 &copy; 2022. All rights reserved</span>
         </div>
     </div>
 </footer>

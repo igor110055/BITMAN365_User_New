@@ -62,6 +62,12 @@
                 padding: 20px 20px;
                 width: 100%;
             }
+            .card{
+                height: 451px;
+            }
+            .card #pagination{
+                padding-bottom: 10px;
+            }
             .card-header{
                 font-size: 22px;
                 padding: 3px;

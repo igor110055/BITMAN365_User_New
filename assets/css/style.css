@@ -2,19 +2,17 @@ body{
     font-family: Roboto;
     background: #EEEEEE;
 }
-.jumbotron-fluid{
-    padding-left: 18.20%;
-    padding-right: 18.20%;
-}
 .navbar-custom {
     background: #393E46;
-    min-height: 100px;
+    height: 70px !important;
+    padding: 10px 30px;
 }
 .nav-link{
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
     color: #FFFFFF;
+    padding: 15px 20px
 }
 .nav-link:hover{
     color: #FFF200;
@@ -60,6 +58,12 @@ body{
     font-size: 48px;
     color: #FFFFFF;
 }
+a#brand_desk{
+    font-size: 35px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 700;
+}
 .navbar a.navbar-brand:hover{
     text-decoration: none;
     color: #FFFFFF;
@@ -68,7 +72,7 @@ body{
     content: none;
 }
 .dropdown-menu{
-    margin-top: 22px;
+    margin-top: 10px;
     background: #393E46;
     opacity: 0.9;
 }
@@ -99,6 +103,7 @@ body{
 }
 .btn_group_nav{
     margin-right: 15px;
+    font-size: 18px;
 }
 .navbar-toggler-icon{
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -107,7 +112,7 @@ body{
     margin-bottom: 20px;
 }
 .jumbotron.headers{
-    height: 400px;
+    height: 200px;
     background: url("../img/unsplash_7LoWpCOAn6k.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -115,23 +120,25 @@ body{
     border-bottom: 8px solid rgba(58, 58, 58, 0.2);
     box-sizing: border-box;
     box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
-    padding: 50px 120px 50px 120px;
+    padding: 30px 16.66%;
 }
 .header_title{
     color: #FFFFFF;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 47px;
-    width: 592px;
+    font-size: 20px;
+    line-height: 40px;
+    width: 400px;
+    float: left;
 }
 .header_subtitle{
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 20px;
     color: #FFFFFF;
     width: 400px;
+    float: left;
 }
 .btn-white{
     background: rgba(255, 255, 255, 0.85);
@@ -139,41 +146,44 @@ body{
     box-sizing: border-box;
     box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
     border-radius: 10px;
-    height: 90px;
-    width: 300px;
-    margin: -260px 120px 0 0;
+    height: 70px;
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     color: #1F8FAE;
+    float: right;
+    margin: 30px 30px;
 }
-.tradings{
-    height: 350px;
-    background-color: #FFFFFF;
-    margin: 3px 0 0 0;
-}
-.trading_digital{
-    font-weight: 700;
-    font-size: 36px;
-    margin-top: -50px;
-}
-.trading_digital-subtitle{
-    font-size: 20px;
-    text-align: left;
-    color: #666666;
-    padding-top: 0;
-    width: 100%;
-}
-.cards-trading {
+.header_grid {
     width: 100%;
     margin: 0 auto;
     display: grid;
     grid-gap: 1rem;
-    margin: 0 0 10.60rem 0;
-    text-align: left;
+    margin: 0 0 2.60rem 0;
+    grid-template-columns: 60% 40%; 
 }
-.cards-trading { 
-    grid-template-columns: repeat(3, 1fr); 
+.jumbotron.trading_title_details{
+    margin: 0;
+    padding: 10px 16.66%;
+    background: #FFFFFF;
+    height: 240px;
+}
+.trading_title{
+    font-weight: 700;
+    font-size: 20px;
+}
+.trading_subtitle{
+    font-weight: 500;
+    font-size: 14px;
+    color: #666666;
+}
+.tradings {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    margin: 0 0 2.60rem 0;
+    grid-template-columns: 33.33% 33.33% 33.33%;
 }
 .mycheckbox input[type="checkbox"] {
     display: none;
@@ -186,82 +196,81 @@ body{
 .mycheckbox input[type="checkbox"]:checked + label {
     background: url('../icons/bi_check-circle-fill.png') no-repeat;
 }
-.card-trading {
-    width: 268px;
-    height: 128px;
-    word-wrap: break-word;
-    margin-left: 0;
-    margin-right: 60px;
-}
 .card-trading-title{
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 19px;
     margin: -35px 0 0 30px;
     position: absolute;
 }
 .card-trading-subtitle{
     color: #888888;
-    font-size: 16px;
-    margin: 0 0 0 30px;
+    font-size: 12px;
+    width: 87%;
 }
-.graph{
-    margin-bottom: 5px;
+.jumbotron.graph{
+    padding: 25px 16.66%;
 }
-.cards_graph {
+.header_graph{
     width: 100%;
     display: grid;
-    grid-gap: 1.8rem 1.8rem;
-    text-align: center;
-    margin: 0;
-    grid-template-columns: 22% 22% 22% 22%;
+    grid-gap: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 25% 25% 25% 25%;
 }
-.card_graph {
-    width: 300px;
-    height: 350px;
-    padding: 1rem;
-    word-wrap: break-word;
-    box-sizing: border-box;
-    box-shadow: 4px 4px 0px rgba(223, 222, 222, 0.85);
-    background: #F7F7F7;
-}
-.card-red{
+.header_graph_red{
     border-radius: 15px;
     border-top: 10px solid #ED5659;
+    background: #FFFFFF;
+    padding: 20px 20px;
+    width: 95%;
 }
-.card-minthgreen{
+.header_graph_mintgreen{
     border-radius: 15px;
     border-top: 10px solid #1F8FAE;
+    background: #FFFFFF;
+    padding: 20px 20px;
+    width: 95%;
 }
-.card-lightyellow{
+.header_graph_yellow{
     border-radius: 15px;
     border-top: 10px solid #FFF200;
+    background: #FFFFFF;
+    padding: 20px 20px;
+    width: 95%;
 }
-.card-blue{
+.header_graph_blue{
     border-radius: 15px;
     border-top: 10px solid #1072BA;
+    background: #FFFFFF;
+    padding: 20px 20px;
+    width: 95%;
 }
-.carbon_chart-candlestick,.ri_24-hours-fill,.flat-color-icons_combo-chart,.gala_secure{
+.header_graph_img img{
     width: 100px;
     height: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
 }
-.carbon_chart-title,.ri_24-title,.flat-color-title,.gala_secure-title{
-    font-size: 25px;
+.header_graph_title{
+    text-align: center;
     font-weight: 700;
-    padding: 10px;
+    font-size: 18px;
 }
-.carbon_chart-subtitle,.ri_24-subtitle,.flat-color-subtitle,.gala_secure-subtitle{
-    padding: 0 15px 0 15px;
-    text-align: left;
+.header_graph_subtitle{
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+.header_graph_cl{
+    height: 264px;
     color: #888888;
-    margin-top: -5px;
 }
 #modal-login{
-    top: 220px;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
 }
 #modal-login .modal-content {
     background: #393E46;
@@ -270,8 +279,8 @@ body{
     border-radius: 10px;
 }
 #modal-login .modal-dialog{
-    width: 800px;
-    height: 450px;
+    width: 600px;
+    height: 350px;
 }
 #modal-login .modal-backdrop{
     background-color: transparent !important;
@@ -286,7 +295,7 @@ body{
     border-bottom: none;
 }
 #modal-login .modal-body{
-    padding: 0 179px 48px 179px;
+    padding: 10px 50px;
 }
 #modal-login .modal-footer{
     border-top: none;
@@ -403,16 +412,28 @@ body{
 /* .fixed-position {
     position: fixed;
 } */
+
 .navbar-collapse-1-mobile{
     display: none;
     background: #393E46;
     z-index: 1;
     width: 100%;
-    height: 100%;
-    padding: 100px 20px 0 20px;
+    height: 100vh;
+    padding: 200px 20px;
+    position: fixed;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-.mobile_nav_collapse{
-    margin-top: 40px;
+.navbar_mobile_grid{
+    width: 100%;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    margin-bottom: 10px;
+}
+.navbar_mobile_grid a{
+    width: 96%;
 }
 .btn-mob{
     background: #000000;
@@ -423,10 +444,7 @@ body{
     padding: 8px;
     border: none;
     border-radius: 5px;
-    margin-right: 4px;
-    margin-left: 4px;
-    margin-top: 8px;
-    width:88px;
+    width: 70px;
     height: 50px;
     font-size: 16px;
 }
@@ -439,8 +457,10 @@ body{
 .text-orange{
     color: #FF9300;
     background: #000000;
-}
+} 
 .display_nonlog{
+    display: none;
+    padding: 50px 0;
     display: none;
     background: #393E46;
     z-index: 1;
@@ -542,6 +562,7 @@ body{
 .btn_group_nav a{
     text-decoration: none;
     color: #FFFFFF;
+    font-size: 18px;
 }
 .page-signup{
     margin-top: 30px;
@@ -606,7 +627,49 @@ body{
 iframe{
     border: 2px rgb(153, 152, 152) solid;
 }
-.card_btc {
+.game_grid{
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 68% 30%;
+    margin-bottom: 10px;
+}
+.game_details,.betting_details{
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+}
+.game_title, .betting_title{
+    color: #FFF200;
+    font-size: 20px;
+    background: #000000;
+    padding:  10px 10px;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+}
+.game_title_timer{
+    float: right;
+}
+.game_field, .betting_field{
+    height:410px;
+    background: #FFFFFF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.candle_chart_field{
+    width: 100%;
+    height: 100%;
+}
+#candle_chart{
+    object-fit: cover;
+}
+.betting_title{
+    text-align: center;
+}
+/* .card_btc {
     display: grid;
     grid-template-columns: 70% 30%;
     grid-gap: 1em 1em;
@@ -635,7 +698,6 @@ iframe{
     grid-template-columns: 60% 40%;
     grid-gap: 1em 1em;
     grid-auto-flow: row dense;
-    /* padding: 20px 50px 20px 20px; */
     height: 50px;
 }
 .btc_header_trade{
@@ -769,7 +831,7 @@ iframe{
 }
 .btn_trading_blue{
     background: #1072BA;
-}
+} */
 .rowcol,.rowcol1 {
     width: 100%;
     margin: 0 auto;
@@ -819,777 +881,40 @@ iframe{
 .c_header_trade{
     color: #FFF200;
 }
+/* .footer_grid{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    margin: 0 0 2.60rem 0;
+    grid-template-columns: 50% 50%;
+} */
+.footer_brand span{
+    display: inline-block;
+}
 .footer{
     background-color: #393E46;
-    height: 120px;
-}
-.footer{
-    height: 120px;
-    padding-top: 25px;
+    height: 80px;
     color: #FFFFFF;
+    padding: 8px 16.66%;
 }
-.footer .sub-footer{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    padding: 34px 0 0 3px;
-    text-align: left;
-    margin-left: 120px;
+.footer_brand .footer_logo{
+    font-size: 45px;
 }
-.footer-logo{
-    font-size: 48px;
-    text-align: center;
+.footer_brand .footer_sub_title{
+    font-size: 16px;
 }
-/* btc_usd styles*/
-@media only screen and (max-width : 360px){
-    /* Styles */
-    .navbar-custom{
-        min-height: 56px;
-    }
-    .navbar-brand{
-        display: none;
-    }
-    /* .navbar-collapse {
-        height: 90vh;
-        max-height: 100vh !important;
-    } */
-    .jumbotron.headers{
-        height: 188px;
-        background: url("../img/unsplash_7LoWpCOAn6k.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-bottom: 8px solid rgba(58, 58, 58, 0.2);
-        box-sizing: border-box;
-        box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
-        padding: 23px;
-    }
-    .header_title{
-        color: #FFFFFF;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 23px;
-        text-align: center;
-        width: 100%;
-        margin: -10px 0 0 0;
-    }
-    .header_subtitle{
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 19px;
-        color: #FFFFFF;
-        width: 100%;
-        margin: 10px 0 0 0;
-    }
-    .btn-white{
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid #AED3EA;
-        box-sizing: border-box;
-        box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
-        border-radius: 10px;
-        height: 40px;
-        width: 98px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 19px;
-        margin: 10px 0 0 0;
-    }
-    .header_btn{
-        text-align: center !important
-    }
-    .tradings{
-        height: 470px;
-        background-color: #FFFFFF;
-        padding: 20px;
-    }
-    .trading_digital{
-        margin-top: -15px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 19px;
-        line-height: 23px;
-    }
-    .trading_digital-subtitle{
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 16px;
-        text-align: left;
-        color: #666666;
-        padding-top: 0;
-    }
-    .cards-trading {
-        width: 100%;
-        margin: 0 auto;
-        display: grid;
-        grid-gap: 1rem;
-        margin: 0 0 4.60rem 0;
-        text-align: left;
-    }
-    .cards-trading { 
-        grid-template-columns: repeat(1, 1fr); 
-    }
-    .card-trading {
-        width: 100%;
-        height: 48px;
-        word-wrap: break-word;
-        margin: 10px 60px 20px 0;
-    }
-    .card-trading-title{
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 19px;
-        margin: -35px 20px 0 30px;
-    }
-    .card-trading-subtitle{
-        color: #888888;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-        margin: -10px 0 0 30px;
-    }
-    .graph{
-        padding: 20px 0 0 0;
-        margin-bottom: 20px;
-    }
-    .cards_graph {
-        width: 100%;
-        display: grid;
-        grid-gap: 1.16rem;
-        text-align: center;
-        margin: 0;
-    }
-    .cards_graph { 
-        grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
-    }
-    .card_graph {
-        padding: 1rem;
-        width: 156px;
-        height: 198px;
-        word-wrap: break-word;
-        box-sizing: border-box;
-        box-shadow: 2px 2px 0px rgba(223, 222, 222, 0.85);
-    }
-    .carbon_chart-candlestick,.ri_24-hours-fill,.flat-color-icons_combo-chart,.gala_secure{
-        width: 55.08px;
-        height: 61.48px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: -5px;
-    }
-    .carbon_chart-title,.ri_24-title,.flat-color-title,.gala_secure-title{
-        padding: 10px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 19px;
-    }
-    .carbon_chart-subtitle,.ri_24-subtitle,.flat-color-subtitle,.gala_secure-subtitle{
-        padding: 0 15px 0 15px;
-        text-align: left;
-        color: #888888;
-        margin-top: -20px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 14px;
-    }
-    .navbar-nav,.nav_layout_btn{
-        display: none;
-    }
-    .display_nonlog,.display_log,.navbar-collapse-1-mobile{
-        position: absolute;
-        /* position: fixed; */
-    }
-    .current_stocks_mobile{
-        background-color: #545454;
-        height: 36px;
-        display: block;
-    }
-    .dollar_mint_icon_mob{
-        text-align: center !important;
-    }
-    .ic_round_1{
-        display: block;
-    }
-    .page-signup{
-        margin-top: 8px;
-    }
-    .signup-title{
-        font-size: 20px;
-    }
-    .signup-subtitle{
-        font-size: 20px;
-    }
-    .s_account_code{
-        height: 15px;
-    }
-    .text_signup, .error_id_chk, .error_nn_chk, .custom-select-lg{
-        font-size: 12px;
-    }
-    #modal-notif{
-        top: 181px;
-        left: 25px;
-        right: 25px;
-    }
-    #modal-notif .modal-dialog{
-        width: 290px;
-        height: 200px; 
-    }
-    #modal-notif .modal-notif-title{
-        font-size: 20px;
-    }
-    #modal-notif .modal-notif-body{
-        font-size: 18px;
-    }
-    #modal-notif .btn-primary{
-        width: 98px;
-        height: 44px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-    }
-    /* btc */
-    .page_btc{
-        /* margin-top: 150px; */
-        padding-bottom: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-        /* position: absolute; */
-    }
-    .card_btc {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-gap: 1em 1em;
-        grid-auto-flow: row dense;
-    }
-    .card_btc_target {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-gap: 1em 1em;
-        grid-auto-flow: row dense;
-    }
-    .card.btc_header{
-        background: #393E46;
-        box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px 10px 0px 0px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-gap: 1em 1em;
-        grid-auto-flow: row dense;
-        padding: 20px 20px 20px 20px;
-    }
-    .c_header_l{
-        text-align: center;
-        font-size: 18px;
-        margin-top: -8px;
-        padding: 0;
-    }
-    .c_header_r{
-        display: none;
-    }
-    .card-footer{
-        font-weight: 700;
-        display: block;
-    }
-    .body_trading{
-        padding: 10px;
-    }
-    .btn_trading_red, .btn_trading_blue{
-        width: 120px;
-        height: 36px;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        color: #FFFFFF;
-        font-size: 16px;
-    }
-    .decition_time,.price{
-        margin-bottom: 10px;
-        margin-left: 20px;
-        padding: 2px;
-        color: #FFFFFF;
-        font-weight: 700;
-        width: 74px;
-        height: 24px;
-        font-size: 14px;
-        text-align: center;
-        border-radius: 0px;
-    }
-    .time_result,.price_result{
-        margin-bottom: 10px;
-        margin-right: 20px;
-        padding: 2px;
-        font-weight: 700;
-        font-size: 14px;
-        width: 167px;
-        text-align: center;
-        height: 24px;
-        border-radius: 0px;
-    }
-    .time_result{
-        color: #FFFFFF;
-    }
-    .price_result{
-        color: #FFF200;
-    }
-    .btn-signup_grp{
-        width: 99px;
-        height: 44px;
-        box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        margin-left: 10px;
-        font-size: 16px;
-        padding: 10px;
-    }
-    .footer{
-        height: 56px;
-        padding-top: 10px;
-        color: #FFFFFF;
-    }
-    .footer .sub-footer{
-        display: none;
-        
-    }
-    .footer-logo{
-        font-size: 30px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-    }
+.fixed_top{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
-/* Desktops and laptops ----------- */
-@media only screen and (min-width: 480px) and (max-width: 768px){
-    /* Styles */
-    .navbar-brand{
-        display: none;
-    }
-    .display_nonlog,.display_log,.navbar-collapse-1-mobile,.navbar-collapse{
-        position: absolute;
-        /* position: fixed; */
-    }
-    .nav-link{
-        font-size: 16px;
-    }
-    .btn-primary{
-        margin-right: 3px;
-    }
-    .trading_digital{
-        font-size: 30px;
-        text-align: center;
-    }
-    .trading_digital-subtitle{
-        font-size: 16px;
-    }
-    .tradings{
-        padding: 60px;
-    }
-    .card-trading {
-        width: 190px;
-        height: 128px;
-        margin-right: 10px;
-    }
-    .card-trading-title{
-        font-size: 14px;
-    }
-    .card-trading-subtitle{
-        font-size: 14px;
-    }
-    .jumbotron.headers{
-        height: 376px;
-        padding: 40px;
-    }
-    .header_title{
-        color: #FFFFFF;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 40px;
-        line-height: 47px;
-        text-align: center;
-        width: 100%;
-        margin: -10px 0 0 0;
-    }
-    .header_subtitle{
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 19px;
-        color: #FFFFFF;
-        width: 100%;
-        margin: 40px 0 0 0;
-    }
-    .btn-white{
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid #AED3EA;
-        box-sizing: border-box;
-        box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
-        border-radius: 10px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 42px;
-        margin: 10px;
-        width: 300px;
-        height: 90px;
-
-    }
-    .header_btn{
-        text-align: center!important
-    }
-    .mobile_nav_collapse{
-        margin: 40px 20px 0 20px;
-    }
-    .current_stocks_mobile{
-        background-color: #545454;
-        height: 36px;
-        margin-bottom: -20px;
-        margin-top: 0;
-        display: block;
-    }
-    .btn-mob{
-        border-radius: 5px;
-        margin-right: 10px;
-        margin-left: 10px;
-        margin-top: 8px;
-        width:198px;
-        height: 70px;
-        font-size: 24px;
-    }
-    .graph{
-        padding: 20px 0 10px 50px;
-        margin-bottom: 20px;
-    }
-    .card_graph {
-        width: 280px;
-        height: 350px;
-    }
-    .cards_graph {
-        width: 100%;
-        display: grid;
-        grid-gap: 0.85rem;
-        text-align: center;
-    }
-    .cards_graph { 
-        grid-template-columns: repeat(auto-fit, minmax(330px, 2fr));
-    }
-    .form_login_mobile{
-        padding: 50px 120px 0 120px;
-    }
-    .ic_round_1{
-        display: block;
-        margin-left: 590px;
-    }
-    .display_log{
-        padding: 120px 160px 0 160px;
-        margin: 0;
-    }
-    .display_log img{
-        padding: 0 0 0 280px;
-    }
-    .rec_point{
-        text-align: left;
-        padding-top: 8px;
-        padding-left: 60px;
-        padding-bottom: 12px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-        color: #888888;
-    }
-    .btn_log_mobile{
-        background: #F7F7F7;
-        border-radius: 10px;
-        width: 100%;
-        height: 44px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 19px;
-        color: #333333;
-        text-align: left;
-        margin-bottom: 5px;
-    }
-    .display_log .layout_bg{
-        background: #C4C4C4;
-        border-radius: 10px;
-        width: 100%;
-        padding: 7px 5px 5px 5px;
-    }
-    .display_log .btn_logout{
-        background: transparent;
-        border-radius: 10px;
-        border: 1px solid #FFFFFF;
-        width: 120px;
-        height: 60px;
-        color: #888888;
-        text-align: center;
-        font-size: 14px;
-        margin: 20px 65px 0 180px;
-        padding-left: 20px;
-    }
-    .page_btc{
-        margin-top: 0;
-        margin-bottom: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .card_btc {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-gap: 1em 1em;
-        grid-auto-flow: row dense;
-        padding: 30px 100px 20px 100px;
-    }
-    .card.btc_header{
-        background: #393E46;
-        box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px 10px 0px 0px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-gap: 1em 1em;
-        grid-auto-flow: row dense;
-        padding: 20px 20px 20px 20px;
-    }
-    .c_header_l{
-        text-align: center;
-        font-size: 18px;
-    }
-    .c_header_r{
-        display: none;
-    }
-    .card-footer{
-        display: none;
-    }
-    .body_trading{
-        padding: 10px;
-    }
-    .btn-signup_grp{
-        font-size: 20px;
-    }
-    .footer{
-        background-color: #393E46;
-        height: 120px;
-    }
-    .footer{
-        height: 120px;
-        padding-top: 25px;
-        color: #FFFFFF;
-        text-align: center;
-    }
-    .footer .sub-footer{
-        display: none;
-    }
-    .footer-logo{
-        font-size: 48px;
-    }
-}
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1200px) {
-    /* Styles */
-    .nav-link{
-        font-size: 16px;
-    }
-    .jumbotron-fluid{
-        padding-left: 10.01%;
-        padding-right: 10.01%;
-    }
-    .header_title{
-        font-size: 30px;
-        padding-right: 20px;
-        margin-top: 50px;
-    }
-    .header_btn{
-        text-align: right!important
-    }
-    .card_graph {
-        width: 210px;
-        height: 350px;
-    }
-    .cards_graph {
-        width: 100%;
-        display: grid;
-        grid-gap: 1.5rem 1.5rem;
-        text-align: center;
-        margin: 0;
-        grid-template-columns: 22% 22% 22% 22%;
-    }
-    .btn-primary{
-        margin-right: 3px;
-    }
-    .btn-white{
-        margin-right: 20px;
-        margin-top: -210px;
-    }
-    .trading_digital-subtitle{
-        width: 100%;
-        padding-right: 30px;
-    }
-    .page-signup{
-        padding-left: 24.66%;
-        padding-right: 24.66%;
-    }
-    .btn-signup_grp{
-        font-size: 20px;
-    }
-    /* btc */
-    .page_btc{
-        margin-top: 130px;
-        padding-left: 20px;
-        padding-right: 35px;
-    }
-    .card_btc {
-        display: grid;
-        grid-template-columns: 70% 30%;
-        grid-gap: 1em 1em;
-        grid-auto-flow: row dense;
-    }
-    .cards-trading {
-        width: 100%;
-        margin: 0 auto;
-        display: grid;
-        grid-gap: 1rem;
-        margin: 0 0 4.60rem 0;
-        text-align: left;
-    }
-    .cards-trading { 
-        grid-template-columns: repeat(3, 1fr); 
-    }
-    .card-trading {
-        width: 268px;
-        height: 128px;
-        word-wrap: break-word;
-        margin-left: 0;
-        margin-right: 10px;
-    }
-    .card-footer{
-        display: none;
-    }
-    .footer{
-        background-color: #393E46;
-        height: 120px;
-    }
-    .footer{
-        height: 120px;
-        padding-top: 25px;
-        color: #FFFFFF;
-        text-align: center;
-    }
-    .footer .sub-footer{
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        padding: 34px 0 0 230px;
-        position: absolute;
-        width: 100%;
-        display: block;
-        margin-left: 55px;
-    }
-    .footer-logo{
-        font-size: 48px;
-    }
-}
-@media only screen  and (min-width : 1920px) {
-    /* Styles */
-    .container {
-        max-width: 1640px;
-    }
-    .jumbotron-fluid{
-        padding-left: 18.20%;
-        padding-right: 18.20%;
-    }
-    .card-trading {
-        width: 268px;
-        height: 128px;
-        word-wrap: break-word;
-        margin-left: 0;
-    }
-    .nav-link{
-        font-size: 24px;
-    }
-    .jumbotron.headers{
-        padding: 50px 350px 50px 350px;
-    }
-    .header_title{
-        margin-top: 29px;
-    }
-    .header_btn{
-        text-align: right!important
-    }
-    .btn-white{
-        margin-right: 40px;
-        margin-top: -150px;
-    }
-    .card_graph {
-        width: 270px;
-        height: 350px;
-    }
-    .cards_graph {
-        width: 100%;
-        display: grid;
-        grid-gap: 1.8rem 1.8rem;
-        text-align: center;
-        margin: 0;
-        grid-template-columns: 22% 22% 22% 22%;
-    }
-    .page-signup{
-        margin-top: 30px;
-        margin-bottom: 0;
-        padding-left: 20.23%;
-        padding-right: 20.23%;
-    }
-    /* btc */
-    .page_btc{
-        margin-top: 130px;
-        padding-left: 252px;
-        padding-right: 252px;
-    }
-    .card_btc {
-        display: grid;
-        grid-template-columns: 70% 30%;
-        grid-gap: 1em 1em;
-        grid-auto-flow: row dense;
-    }
-    .btn-signup_grp{
-        font-size: 20px;
-    }
-    .btn-primary,.nav-item{
-        margin-left: 35px;
-    }
-    .card-footer{
-        display: none;
-    }
-    .footer{
-        background-color: #393E46;
-        height: 120px;
-    }
-    .footer{
-        height: 120px;
-        padding-top: 25px;
-        color: #FFFFFF;
-        text-align: center;
-    }
-    .footer .sub-footer{
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        padding: 34px 0 0 230px;
-        position: absolute;
-        width: 100%;
-        margin-left: 112px;
-    }
-    .footer-logo{
-        font-size: 48px;
-    }
+.fixed_bottom{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
 }

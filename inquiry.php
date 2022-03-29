@@ -57,7 +57,6 @@
         table.inquiry tr.rowContent td:nth-child(odd) {
             background-color: #DDDDDE;
             text-align: left;
-            padding-left: 40px;
             font-size: 14px;
             font-weight: 500;
         }
@@ -229,6 +228,12 @@
             .page-inquiry{
                 padding: 20px 20px;
                 width: 100%;
+            }
+            .card{
+                height: 451px;
+            }
+            .card #pagination{
+                padding-bottom: 10px;
             }
             .card-header{
                 font-size: 22px;

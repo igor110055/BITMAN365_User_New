@@ -62,13 +62,15 @@
             $output .= '<td>'.$val["t_Inquiry_Date"].' / '.$val["t_Response_Time"].'</td>';
             $output .= '</tr>';
             $output .= '<tr class="rowContent">';
-            $output .= '<td style="background: #EEEEEE;">[ 문의 ]</td>';
-            $output .= '<td colspan="3" style="background: #EEEEEE; text-align: left;">'.$val["t_Inquiry_Details"].'</td>';
+            $output .= '<td style="background: #EEEEEE;  text-align: left; padding-left: 50px;">[ 문의 ]</td>';
+            $output .= '<td colspan="4" style="background: #EEEEEE; text-align: left;">'.$val["t_Inquiry_Details"].'</td>';
             $output .= '</tr>';
-            $output .= '<tr class="rowContent1">';
-            $output .= '<td style="background: #DDDDDE;">[ 답변 ]</td>';
-            $output .= '<td colspan="3" style="background: #DDDDDE; text-align: left;">'.$val["t_Manager_Reply"].'</td>';
-            $output .= '</tr>';
+            if($val["t_Manager_Reply"] && $val["t_Inquiry_Status_Id"] == 1){
+                $output .= '<tr class="rowContent1">';
+                $output .= '<td style="background: #DDDDDE;  text-align: left; padding-left: 50px;">[ 답변 ]</td>';
+                $output .= '<td colspan="4" style="background: #DDDDDE; text-align: left;">'.$val["t_Manager_Reply"].'</td>';
+                $output .= '</tr>';
+            }
             $sNum ++;
         }
     }else{

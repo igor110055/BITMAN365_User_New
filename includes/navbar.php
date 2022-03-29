@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-custom" role="navigation">
-    <a class="navbar-brand ml-4" href="./">BITMAN365</a>
     <button class="navbar-toggler" type="button" id="navbar-collapse-1">
         <span class="navbar-toggler-icon"></span>
         <a class="navbar-brand-mobile" href="./">BITMAN365</a>
@@ -25,6 +24,7 @@
         <?php
             if(@$_SESSION["user_session"]){
             echo '
+            <a id="brand_desk" href="./">BITMAN365</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="./btc_usd.php">BTC/USD</a>
@@ -67,6 +67,7 @@
             </ul>';
             }else{
                 echo '
+                <a id="brand_desk" href="./">BITMAN365</a>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item modal-popup-login">
                         <a class="nav-link" href="#">BTC/USD</a>
@@ -79,13 +80,13 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav mr-5">
-                    <li class="nav-item dropdown modal-popup-login">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-noticeguide" style="text-decoration: none;" href="#" id="drnoticeguide" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             공지 및 이용
                         </a>
                         <div class="dropdown-menu notgui" aria-labelledby="drnoticeguide">
-                            <a class="dropdown-item" href="#">공지사항</a>
-                            <a class="dropdown-item" href="#">이용안내</a>
+                            <a class="dropdown-item" href="./notice.php">공지사항</a>
+                            <a class="dropdown-item" href="./guide.php">이용안내</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown modal-popup-login">
@@ -97,13 +98,13 @@
                             <a class="dropdown-item" href="#">출금신청</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown modal-popup-login">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-inquiryfaq" style="text-decoration: none;" href="#" id="inquiryfaq" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             고객센터
                         </a>
                         <div class="dropdown-menu inqfaq" aria-labelledby="inquiryfaq">
-                            <a class="dropdown-item" href="#">1:1문의</a>
-                            <a class="dropdown-item" href="#">FAQ</a>
+                            <a class="dropdown-item modal-popup-login" href="#">1:1문의</a>
+                            <a class="dropdown-item" href="./faq.php">FAQ</a>
                         </div>
                     </li>
                 </ul>';
@@ -158,25 +159,20 @@
     
 </nav>
 <div class="navbar-collapse-1-mobile">
-    <div class="container-fluid mobile_nav_collapse">
-        <!-- next line -->
-        <div class="form-inline">
-            <a href="./btc_usd.php" button type="button" class="btn-mob text-yellow">BTC/USD</a></button>
-            <button type="button" class="btn-mob text-yellow">ETH/USD</button>
-            <button type="button" class="btn-mob text-yellow">XRP/USD</button>
-        </div>
-        <!-- next line -->
-        <div class="form-inline">
-            <button type="button" class="btn-mob text-white"><a href="./notice.php" style="text-decoration: none; color: #FFFFFF;">공지사항</a></button>
-            <button type="button" class="btn-mob text-white"><a href="./guide.php" style="text-decoration: none; color: #FFFFFF;">이용안내</a></button>
-            <button type="button" class="btn-mob text-white"><a href="./inquiry.php" style="text-decoration: none; color: #FFFFFF;">1:1문의</a></button>
-        </div>
-        <!-- next line -->
-        <div class="form-inline">
-            <button type="button" class="btn-mob text-orange"><a href="./faq.php" style="text-decoration: none; color: #FFFFFF;">FAQ</a></button>
-            <button type="button" class="btn-mob text-orange"><a href="./deposit.php" style="text-decoration: none; color: #FF9300;">입금신청</a></button>
-            <button type="button" class="btn-mob text-orange">출금신청</button>
-        </div>
+    <div class="navbar_mobile_grid">
+        <a href="./btc_usd.php" button type="button" class="btn-mob text-yellow">BTC/USD</a>
+        <a href="./eth_usd.php" button type="button" class="btn-mob text-yellow">ETH/USD</a>
+        <a href="./xrp_usd.php" button type="button" class="btn-mob text-yellow">XRP/USD</a>
+    </div>
+    <div class="navbar_mobile_grid">
+        <a href="./notice.php" button type="button" class="btn-mob text-white">공지사항</a>
+        <a href="./guide.php" button type="button" class="btn-mob text-white">이용안내</a>
+        <a href="./inquiry.php" button type="button" class="btn-mob text-white">1:1문의</a>
+    </div>
+    <div class="navbar_mobile_grid">
+        <a href="./faq.php" button type="button" class="btn-mob text-orange">FAQ</a>
+        <a href="./deposit.php" button type="button" class="btn-mob text-orange">입금신청</a>
+        <a href="./withdraw.php" button type="button" class="btn-mob text-orange">출금신청</a>
     </div>
 </div>
 <div class="display_nonlog">
@@ -198,13 +194,15 @@
 </div>
 <div class="display_log">
     <div style="text-align:center">
-        <button type="button" class="btn btn-gray btn_log_mobile">닉네임닉네임닉 <img src="assets/icons/akar-icons_sound-on.png"></button>
+        <button type="button" class="btn btn-gray btn_log_mobile">닉네임닉네임닉 <img src="assets/icons/akar-icons_sound-on.png" class="soung_img"></button>
         <p class="rec_point">추천지점 : 강남점</p>
         <div class="layout_bg">
             <button type="button" class="btn btn_log_mobile">입출금 내역</button>
             <button type="button" class="btn btn_log_mobile">거래내역</button>
             <button type="button" class="btn btn_log_mobile">개인정보 설정</button>
         </div>
-        <a href="#" data-code="<?=$_SESSION["user_session"]["u_Account_Code"]?>" class="btn btn_log_mobile btn_logout">입출금 내역</a>
+        <div class="btn_logs_mobile">
+            <a href="#" data-code="<?=$_SESSION["user_session"]["u_Account_Code"]?>" class="btn btn_log_mobile btn_logout">입출금 내역</a>
+        </div>
     </div>
 </div>
