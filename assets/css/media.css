@@ -1,3 +1,42 @@
+@media (max-width : 2230px){
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 120px;
+    font-size: 18px;
+  }
+  .page_btc{
+    padding: 20px 16.66%;
+  }
+}
+@media (max-width : 1940px){
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 100px;
+    font-size: 18px;
+  }
+  .page_btc{
+    padding: 20px 16.66%;
+  }
+}
+@media (max-width : 1340px){
+  .bet_orange,.bet_mint_green,.bet_red,.bet_blue{
+    width: 60px;
+    font-size: 12px;
+  }
+  .fchild1{
+    font-size: 14px;
+  }
+  .bchild{
+    font-size: 9px;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 80px;
+  }
+}
 @media (max-width: 1290px) {
   .footer{
     padding: 0 14.66%;
@@ -8,10 +47,40 @@
   .display_log{
     display: none;
   }
+  .nav-item{
+    padding-right: 0px;
+  }
+  .btn-primary{
+    font-size: 12px;
+    width: 80px;
+    height: 35px;
+  }
+  .btn-primary a.btn-signup{
+    font-size: 12px;
+  }
+  .jumbotron.trading_title_details{
+    height: 250px;
+  }
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 100px;
+    font-size: 14px;
+  }
+  .page_btc{
+    padding: 20px 4.11%;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 80px;
+  }
 }
 @media (max-width: 1140px) {
   .nav-link{
-    font-size: 14px;
+    font-size: 12px;
   }
   .btn_group_nav button{
     width: 87px;
@@ -21,13 +90,13 @@
     margin-top: 14px;
   }
   .jumbotron.headers{
-    padding: 30px 8.33%;
+    padding: 30px 16.66%;
   }
   .jumbotron.trading_title_details{
     margin: 0;
-    padding: 15px 8.33%;
+    padding: 15px 16.66%;
     background: #FFFFFF;
-    height: 210px;
+    height: 220px;
   }
   .trading_title{
     font-size: 17px;
@@ -51,19 +120,60 @@
       width: 87%;
   }
   .jumbotron.graph{
-    padding: 30px 8.33%;
+    padding: 30px 16.66%;
   }
   .navbar-collapse-1-mobile{
     padding: 200px 200px;
   }
+  .header_graph_title{
+    font-size: 16px;
+  }
+  .header_graph_subtitle{
+    font-size: 11px;
+  }
   .footer{
-    padding: 0 8.33%;
+    padding: 0 16.66%;
   }
   .display_nonlog{
     display: none;
   }
   .display_log{
     display: none;
+  }
+  .nav-item{
+    padding-right: 0px;
+  }
+  .btn-primary{
+    font-size: 12px;
+    width: 80px;
+    height: 35px;
+  }
+  .btn-primary a.btn-signup{
+    font-size: 12px;
+  }
+  .page_btc{
+    padding: 20px 4.11%;
+  }
+  .game_grid{
+    grid-template-columns: 68% 30%;
+  }
+  .game_title{
+    text-align: center;
+  }
+  .game_title_timer{
+    display: none;
+  }
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 80px;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 80px;
   }
 }
 @media (max-width: 992px) {
@@ -89,22 +199,89 @@
   .soung_img{
     float: right;
   }
+  .header_graph_title{
+    font-size: 14px;
+  }
+  .header_graph_subtitle{
+    font-size: 9px;
+  }
+  .jumbotron.trading_title_details{
+    height: 250px;
+  }
+  .card-trading-subtitle{
+    font-size: 10px;
+  }
+  .header_grid{
+    margin-top: 25px;
+  }
+  .header_title{
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .header_subtitle{
+    width: 90%;
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .btn-white{
+    height: 50px;
+    font-size: 20px;
+    right: 0;
+    margin: 20px 16.66%; 
+  }
+  .page_btc{
+    padding: 20px 4.11%;
+  }
+  .game_grid{
+    grid-template-columns: 68% 30%;
+  }
+  .game_title{
+    text-align: center;
+  }
+  .game_title_timer{
+    display: none;
+  }
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 70px;
+  }
+  .fchild,.lchild{
+    font-size: 14px;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 80px;
+  }
+}
+@media (max-width: 870px) {
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 65px;
+    font-size: 12px;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 40px;
+  }
 }
 @media (max-width: 778px) {
   .jumbotron.headers{
-    padding: 30px 4.11%;
-  }
-  .header_title{
-    font-size: 16px;
-    width: 300px;
-  }
-  .header_subtitle{
-    font-size: 12px;
-    width: 300px;
+    padding: 30px 16.66%;
   }
   .jumbotron.trading_title_details{
     margin: 0;
-    padding: 15px 4.11%;
+    padding: 15px 16.66%;
     background: #FFFFFF;
     height: 240px;
   }
@@ -130,7 +307,10 @@
       width: 87%;
   }
   .btn-white{
-    margin: 30px 6.11%; 
+    height: 50px;
+    font-size: 20px;
+    right: 0;
+    margin: 20px 16.66%; 
   }
   .current_stocks_mobile{
     background-color: #545454;
@@ -138,7 +318,7 @@
     display: block;
   }
   .jumbotron.graph{
-    padding: 15px 4.11%;
+    padding: 15px 16.66%;
   }
   .header_graph_cl{
     margin-bottom: 10px;
@@ -152,6 +332,12 @@
     justify-content: center;
     align-items: center;
     grid-template-columns: 50% 50%;
+  }
+  .header_graph_title{
+    font-size: 16px;
+  }
+  .header_graph_subtitle{
+    font-size: 11px;
   }
   .navbar-collapse-1-mobile{
     padding: 200px 100px;
@@ -176,6 +362,76 @@
   }
   .soung_img{
     float: right;
+  }
+  .header_grid{
+    margin-top: 20px;
+  }
+  .header_title{
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .header_subtitle{
+    width: 90%;
+    text-align: left;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .footer_brand .footer_logo{
+    font-size: 45px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .footer_brand .footer_sub_title{
+      display: none;
+  }
+  .page_btc{
+    padding: 20px 22.77%;
+  }
+  .game_grid{
+    grid-template-columns: 100%;
+  }
+  .game_title{
+    text-align: center;
+  }
+  .game_title_timer{
+    display: none;
+  }
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 100px;
+    font-size: 16px;
+  }
+  .game_field{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-footer{
+    display: block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .text_result{
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    right: 100px;
+  }
+  .result_table{
+    width: 100%;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 40px;
   }
 }
 
@@ -286,8 +542,35 @@
   .soung_img{
     float: right;
   }
+  .page_btc{
+    padding: 20px 6.66%;
+  }
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 130px;
+    font-size: 18px;
+  }
+  .game_grid{
+    grid-template-columns: 100%;
+  }
+  .game_field{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-footer{
+    display: block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 40px;
+  }
 }
-
 @media (max-width: 479px){
   .header_btn{
     margin-left: auto;
@@ -296,6 +579,9 @@
   }
   .jumbotron.headers{
     padding: 20px 4.11%;
+  }
+  .header_grid{
+    margin-top: 10px;
   }
   .header_title{
     width: 100%;
@@ -306,7 +592,7 @@
   .header_subtitle{
     width: 100%;
     text-align: center;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 14px;
   }
   .btn-white{
@@ -367,9 +653,41 @@
   .soung_img{
     float: right;
   }
+  .game_title{
+    text-align: center;
+  }
+  .game_title_timer{
+    display: none;
+  }
+  .page_btc{
+    padding: 20px 4.11%;
+  }
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 100px;
+    font-size: 18px;
+  }
+  .game_grid{
+    grid-template-columns: 100%;
+  }
+  .game_field{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-footer{
+    display: block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .text_result{
+    display: none;
+    left: 0%;
+    top: 0%;
+    height: 420px;
+  }
+  .result_field{
+    padding: 0 20px;
+  }
 }
-
-@media (min-width : 1150px){
   /* Styles */
   /* .navbar-brand{
       display: none;
@@ -682,12 +1000,12 @@
       margin-right: auto;
       margin-bottom: 10px;
   } */
-}
-@media (min-width : 992px){
+
+/* @media (min-width : 992px){
   .navbar{
     display: block;
   }
-}
+} */
 /* Desktops and laptops ----------- */
 /* @media only screen and (min-width: 480px) and (max-width: 768px){
   .navbar-brand{
@@ -1113,4 +1431,4 @@
   .footer-logo{
       font-size: 48px;
   }
-} */
+}

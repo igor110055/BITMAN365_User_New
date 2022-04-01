@@ -214,21 +214,15 @@ function getBettinguserhistory(){
                 if(element.result == 0){
                     html += '<td style="color: #000000;">진행중</td>';
                 }else if(element.result == 1){
-                    html += '<td style="color: #1072BA;">실현</td>';
+                    html += '<td style="color: #ED5659;">실현</td>';
                 }else if(element.result == 2){
-                    html += '<td style="color: #ED5659;">실격</td>';
+                    html += '<td style="color: #1072BA;">실격</td>';
                 }else{
                     html += '<td style="color: #888888;">무효</td>';
                 }
                 html += '</tr>';
             })
             $('#tbody_history').html(html);
-        },error: function (request, status, error) {
-            var html = '';
-            if(status == 'error'){
-                html += '<p style="text-align: center; color: #888888; padding: 10px;">No records found</p>';
-            }
-            $('#display_trade_group').html(html);
         }
     })
 }

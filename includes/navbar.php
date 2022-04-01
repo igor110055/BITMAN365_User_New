@@ -146,7 +146,7 @@
                     }else{
                         echo '
                             <div class="form-inline my-2 my-lg-0 btn_group_nav">
-                                    <button type="button" class="btn btn-primary modal-popup-login">로그인</button>
+                                    <button type="button" class="btn btn-primary modal-popup-login mr-3">로그인</button>
                                     <button type="button" class="btn btn-primary text-white"><a href="./signup.php" class="btn-signup">회원가입</a></button>
                                 </div>
                             </div>';

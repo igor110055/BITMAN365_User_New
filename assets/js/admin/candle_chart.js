@@ -180,7 +180,7 @@ $(function(){
             }
             if(t.seconds == 0){
                 $('.text_result').css('display','block');
-                $('.container_chart').addClass('cont_opacity');
+                $('.game_field').addClass('game_field_opa');
                 ///////update result
                 var unixtime = convertUnixtoUnix(moment().subtract(1, 'minutes'));
                 $.post("php/api/user/postGameResultUpdate.php", JSON.stringify(unixtime), function(jsondata) {
@@ -237,14 +237,14 @@ $(function(){
     function betDisabled(){
         $('#betAmount').attr('disabled',true);
         $('#totalBetAmount').attr('disabled',true);
-        $('.btn_bet').attr('disabled',true);
+        $('.btn_dis').attr('disabled',true);
         $('#totalBetAmount').val('');
         $('#betAmount').val('');
     }
     function betRemDisabled(){
         $('#betAmount').attr('disabled',false);
         $('#totalBetAmount').attr('disabled',false);
-        $('.btn_bet').attr('disabled',false);
+        $('.btn_dis').attr('disabled',false);
     }
     function convertUnixtoUnix(format){
         var mytime = moment.tz(format,'Asia/Seoul').format("YYYY-MM-DD HH:mm");
