@@ -25,7 +25,7 @@
         .card{
             box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px 10px 4px 4px;
-            height: 680px;
+            height: 747px;
         }
         .card-header{
             background: #393E46;
@@ -81,9 +81,6 @@
             grid-template-columns: 20% 75%;
             padding: 10px 30px;
         }
-        #modal-inquiry_submit{
-            padding: 200px 100px;
-        }
         #modal-inquiry_submit .modal-content{
             background: #393E46;
             border: 4px solid #B4BAC8;
@@ -104,6 +101,7 @@
             height: 44px;
             color: #FFFFFF;
             cursor: default;
+            padding: 5px 5px;
         }
         #inquiry_title,#inquiry_title_i{
             background: #EEEEEE;

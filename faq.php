@@ -20,7 +20,7 @@
         .card{
             box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px 10px 4px 4px;
-            height: 680px;
+            height: 747px;
         }
         .card-header{
             background: #393E46;

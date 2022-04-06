@@ -22,10 +22,15 @@
             padding: 20px 220px;
             width: 100%;
         }
-        .div_layout .card,.div_layout_note .card{
+        .div_layout .card{
             box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px 10px 4px 4px;
             height: 390px;
+        }
+        .div_layout_note .card{
+            box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px 10px 4px 4px;
+            height: 287px;
         }
         .card-header{
             background: #393E46;
@@ -44,7 +49,7 @@
             display: grid;
             grid-gap: 5px;
             grid-template-columns: 48% 4% 48%;
-            padding-bottom: 30px;
+            padding-bottom: 25px;
         }
         .div_layout .arrow_icon{
             padding: 10px;
@@ -298,7 +303,7 @@
         }
         @media screen and (min-width : 1200px){
             .page-withdraw{
-                padding: 30px 20px;
+                padding: 30px 30px;
                 width: 100%;
             }
             .card-header{
@@ -317,11 +322,36 @@
                 font-size: 16px;
                 line-height: 20px;
             }
+            .div_layout .card{
+                height: 400px;
+            }
+            .div_layout_note .card{
+                height: 420px;
+            }
+            .div_layout, .div_layout_note{
+                width: 100%;
+                margin: 0 auto;
+                display: grid;
+                grid-gap: 5px;
+                grid-template-columns: 46% 4% 49%;
+                padding-bottom: 25px;
+            }
+            ol li{
+                font-size: 18px;
+                line-height: 20px;
+            }
         }
         @media screen and (min-width : 1920px){
             .page-withdraw{
-                padding: 30px 230px;
+                padding: 30px 350px;
                 width: 100%;
+            }
+            ol li{
+                font-size: 12px;
+                line-height: 15px;
+            }
+            .div_layout_note .card{
+                height: 277px;
             }
         }
         @media only screen and (min-width: 480px) and (max-width: 768px){
@@ -357,7 +387,7 @@
     ?>
 
     <!-- registration Section -->
-    <div class="container page-withdraw">
+    <div class="page-withdraw">
         <div class="div_layout">
             <div class="card">
                 <div class="card-header">

@@ -41,7 +41,7 @@
     $output .= '<div class="card-header">';
     $output .= '공지사항';
     $output .= '</div>';
-	$output .= '<div class="table-responsive" style="overflow-y: scroll; height: 550px;">';
+	$output .= '<div class="table-responsive" style="overflow-y: scroll; height: 620px;">';
     $output .= '<div class="body-header">';
 	$output .= '<table class="table notice">';
 	$output .= '<thead>';

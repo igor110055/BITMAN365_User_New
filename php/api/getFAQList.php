@@ -41,7 +41,7 @@
     $output .= '<div class="card-header">';
     $output .= 'Frequently Asked Questions';
     $output .= '</div>';
-	$output .= '<div class="table-responsive" style="overflow-y: scroll; height: 550px;">';
+	$output .= '<div class="table-responsive" style="overflow-y: scroll; height: 620px;">';
     $output .= '<div class="body-header">';
 	$output .= '<table class="table faq">';
 	$output .= '<thead>';

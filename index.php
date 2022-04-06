@@ -52,21 +52,21 @@
                     <div class="header_graph_img">
                         <center><img src="assets/icons/ri_24-hours-fill.png"></center>
                     </div>
-                    <p class="header_graph_title">전략적인 거래</p>
+                    <p class="header_graph_title">365/24</p>
                     <p class="header_graph_subtitle">당사의 고객 서비스 팀은 365일, 24시간 내내 고객에게 탁월한 수준의 서비스 지원을 제공합니다.</p>
                 </div>
                 <div class="header_graph_yellow header_graph_cl">
                     <div class="header_graph_img">
                         <center><img src="assets/icons/flat-color-icons_combo-chart.png"></center>
                     </div>
-                    <p class="header_graph_title">전략적인 거래</p>
+                    <p class="header_graph_title">새로운 기회</p>
                     <p class="header_graph_subtitle">BITMAN365는 고객에게 가장 혁신적인 시장을 제공합니다.</p>
                 </div>
                 <div class="header_graph_blue header_graph_cl">
                     <div class="header_graph_img">
                         <center><img src="assets/icons/gala_secure.png"></center>
                     </div>
-                    <p class="header_graph_title">전략적인 거래</p>
+                    <p class="header_graph_title">실시간 위험 관리</p>
                     <p class="header_graph_subtitle">계속된 모니터링과 꾸준한 점검으로 모든 거래에 대한 위험을 방지합니다.</p>
                 </div>
             </div>

@@ -41,7 +41,7 @@
     $output .= '<div class="card-header">';
     $output .= '1 : 1 문의하기 <button class="inq_reg">문의등록</button><button class="inq_toggle" id="toggle-inquiry">문의등록</button>';
     $output .= '</div>';
-	$output .= '<div class="table-responsive" style="overflow-y: scroll; height: 550px;">';
+	$output .= '<div class="table-responsive" style="overflow-y: scroll; height: 620px;">';
     $output .= '<div class="body-header">';
 	$output .= '<table class="table inquiry">';
 	$output .= '<thead>';

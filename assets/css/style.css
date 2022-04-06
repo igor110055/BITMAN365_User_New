@@ -2,15 +2,18 @@ body{
     font-family: Roboto;
     background: #EEEEEE;
 }
+body::-webkit-scrollbar{
+    display: none;
+}
 .navbar-custom {
     background: #393E46;
-    height: 70px !important;
-    padding: 10px 30px;
+    height: 80px !important;
+    padding: 10px 40px;
 }
 .nav-link{
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     color: #FFFFFF;
 }
 .nav-link:hover{
@@ -56,16 +59,16 @@ body{
 }
 .navbar-brand{
     font-style: normal;
-    font-weight: bold;
     font-size: 48px;
+    font-weight: 700;
     color: #FFFFFF;
 }
 a#brand_desk{
-    font-size: 35px;
+    font-size: 48px;
     text-decoration: none;
     color: #FFFFFF;
     font-weight: 700;
-    padding-right: 40px;
+    padding-right: 50px;
 }
 .navbar a.navbar-brand:hover{
     text-decoration: none;
@@ -106,6 +109,7 @@ a#brand_desk{
 }
 .btn_group_nav{
     margin-right: 15px;
+    margin-left: 15px;
     font-size: 18px;
 }
 .navbar-toggler-icon{
@@ -115,7 +119,7 @@ a#brand_desk{
     margin-bottom: 20px;
 }
 .jumbotron.headers{
-    height: 200px;
+    height: 370px;
     background: url("../img/unsplash_7LoWpCOAn6k.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -123,24 +127,25 @@ a#brand_desk{
     border-bottom: 8px solid rgba(58, 58, 58, 0.2);
     box-sizing: border-box;
     box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.85);
-    padding: 30px 20.82%;
+    padding: 100px 360px;
 }
 .header_title{
     color: #FFFFFF;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 40px;
-    width: 100%;
+    font-size: 40px;
+    line-height: 47px;
+    width: 650px;
     float: left;
+    margin-bottom: 30px;
 }
 .header_subtitle{
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 24px;
+    line-height: 28px;
     color: #FFFFFF;
-    width: 400px;
+    width: 480px;
     float: left;
 }
 .btn-white{
@@ -167,17 +172,18 @@ a#brand_desk{
 }
 .jumbotron.trading_title_details{
     margin: 0;
-    padding: 10px 20.82%;
+    padding: 10px 360px;
     background: #FFFFFF;
-    height: 240px;
+    height: 375px;
 }
 .trading_title{
+    margin-top: 20px;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 36px;
 }
 .trading_subtitle{
     font-weight: 500;
-    font-size: 14px;
+    font-size: 24px;
     color: #666666;
 }
 .tradings {
@@ -186,7 +192,7 @@ a#brand_desk{
     display: grid;
     grid-gap: 1rem;
     margin: 0 0 2.60rem 0;
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns: 403.33px 403.33px 403.33px;
 }
 .mycheckbox input[type="checkbox"] {
     display: none;
@@ -202,18 +208,19 @@ a#brand_desk{
 .card-trading-title{
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 19px;
     margin: -35px 0 0 30px;
     position: absolute;
 }
 .card-trading-subtitle{
     color: #888888;
-    font-size: 12px;
+    font-size: 16px;
     width: 87%;
 }
 .jumbotron.graph{
-    padding: 25px 20.82%;
+    padding: 25px 360px;
+    height: 380px;
 }
 .header_graph{
     width: 100%;
@@ -222,7 +229,7 @@ a#brand_desk{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 302.5px 302.5px 302.5px 302.5px;
 }
 .header_graph_red{
     border-radius: 15px;
@@ -253,21 +260,23 @@ a#brand_desk{
     width: 95%;
 }
 .header_graph_img img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 .header_graph_title{
     text-align: center;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 24px;
+    color: #000000;
+    padding-top: 10px;
 }
 .header_graph_subtitle{
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 20px;
 }
 .header_graph_cl{
-    height: 264px;
+    height: 350px;
     color: #888888;
 }
 #modal-login{
@@ -518,10 +527,7 @@ a#brand_desk{
     height: 35px;
     color: #888888;
     font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 20px 65px 0 70px;
+    margin-top: 20px;
 }
 .current_stocks_mobile{
     background-color: #545454;
@@ -634,7 +640,12 @@ iframe{
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 68% 30%;
+}
+.game_grid{
     margin-bottom: 10px;
+}
+.game_list{
+    margin-bottom: -23px;
 }
 .game_details,.betting_details{
     border: 1px solid black;
@@ -656,10 +667,10 @@ iframe{
     float: right;
 }
 .game_field, .betting_field{
-    height:380px;
     background: #F7F7F7;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    height: 390px;
 }
 .candle_chart_field{
     width: 100%;
@@ -699,13 +710,15 @@ iframe{
     font-weight: 700;
 }
 .lchild input[type="text"]{
-    width: 100%;
     text-align: right;
+    width: 100%;
     background: #F7F7F7;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     border: 1px solid #C4C4C4;
     color: #888888;
+    height: 30px;
+    font-size: 18px;
 }
 .ablchild input[type="text"]{
     text-align: right;
@@ -715,6 +728,8 @@ iframe{
     border-radius: 10px;
     border: 1px solid #C4C4C4;
     color: #888888;
+    height: 30px;
+    font-size: 18px;
 }
 .lchild input[type="text"]::placeholder{
     color: #888888;
@@ -739,6 +754,7 @@ iframe{
     width: 150px;
     font-size: 16px;
     padding: 3px 2px;
+    height: 100px;
 }
 .bet_mint_green{
     color: #FFFFFF;

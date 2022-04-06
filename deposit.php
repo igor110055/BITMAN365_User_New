@@ -19,13 +19,13 @@
             display: none;
         }
         .page-deposit{
-            padding: 20px 220px;
             width: 100%;
+            padding: 20px 250px;
         }
         .div_layout .card,.div_layout_note .card{
             box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px 10px 4px 4px;
-            height: 390px;
+            height: 345px;
         }
         .card-header{
             background: #393E46;
@@ -43,7 +43,7 @@
             margin: 0 auto;
             display: grid;
             grid-gap: 5px;
-            grid-template-columns: 48% 4% 48%;
+            grid-template-columns: 50% 5% 50%;
             padding-bottom: 30px;
         }
         .div_layout .arrow_icon{
@@ -290,8 +290,16 @@
         }
         @media screen and (min-width : 1200px){
             .page-deposit{
-                padding: 30px 20px;
+                padding: 30px 100px;
                 width: 100%;
+            }
+            .div_layout, .div_layout_note{
+                width: 100%;
+                margin: 0 auto;
+                display: grid;
+                grid-gap: 5px;
+                grid-template-columns: 48% 5% 46%;
+                padding-bottom: 30px;
             }
             .card-header{
                 font-size: 22px;
@@ -312,14 +320,29 @@
         }
         @media screen and (min-width : 1920px){
             .page-deposit{
-                padding: 30px 230px;
+                padding: 20px 350px;
                 width: 100%;
+            }
+            .div_layout, .div_layout_note{
+                width: 100%;
+                margin: 0 auto;
+                display: grid;
+                grid-gap: 5px;
+                grid-template-columns: 50% 4% 46%;
+                padding-bottom: 30px;
             }
         }
         @media only screen and (min-width: 480px) and (max-width: 768px){
             .page-deposit{
-                padding: 40px 10px;
                 width: 100%;
+            }
+            .div_layout, .div_layout_note{
+                width: 100%;
+                margin: 0 auto;
+                display: grid;
+                grid-gap: 5px;
+                grid-template-columns: 48% 6% 44%;
+                padding-bottom: 30px;
             }
             .inline_grp{
                 grid-template-columns: 30% 67%;
@@ -349,7 +372,7 @@
     ?>
 
     <!-- registration Section -->
-    <div class="container page-deposit">
+    <div class="page-deposit">
         <div class="div_layout">
             <div class="card">
                 <div class="card-header">

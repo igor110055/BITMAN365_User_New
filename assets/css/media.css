@@ -1,7 +1,7 @@
 @media (max-width : 2230px){
   .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
     width: 120px;
-    font-size: 18px;
+    font-size: 16px;
   }
   .page_btc{
     padding: 20px 16.66%;
@@ -10,7 +10,8 @@
 @media (max-width : 1940px){
   .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
     width: 100px;
-    font-size: 18px;
+    height: 30px;
+    font-size: 16px;
   }
   .page_btc{
     padding: 20px 16.66%;
@@ -193,9 +194,6 @@
   .btn_log_mobile{
     width: 100%;
   }
-  .btn_logs_mobile{
-    padding: 10px 80px;
-  }
   .soung_img{
     float: right;
   }
@@ -357,9 +355,6 @@
     padding: 10px 20px;
     width: 50%;
   }
-  .btn_logs_mobile{
-    margin: 10px 50px;
-  }
   .soung_img{
     float: right;
   }
@@ -432,6 +427,9 @@
   }
   .result_field{
     padding: 0 40px;
+  }
+  .game_grid,.game_list{
+    grid-template-columns: 100%;
   }
 }
 
@@ -530,9 +528,6 @@
     padding: 130px 150px;
     position: fixed;
   }
-  .btn_logs_mobile{
-    margin: 10px 20px;
-  }
   .btn_log_mobile{
     width: 100%;
   }
@@ -569,6 +564,9 @@
   }
   .result_field{
     padding: 0 40px;
+  }
+  .game_grid,.game_list{
+    grid-template-columns: 100%;
   }
 }
 @media (max-width: 479px){
@@ -647,9 +645,6 @@
   .footer_brand .footer_sub_title{
       display: none;
   }
-  .btn_logs_mobile{
-    margin: 10px 10px;
-  }
   .soung_img{
     float: right;
   }
@@ -687,7 +682,29 @@
   .result_field{
     padding: 0 20px;
   }
+  .game_grid,.game_list{
+    grid-template-columns: 100%;
+  }
+  .betting_field{
+    height: 400px;
+  }
 }
+/* @media (max-width: 360px){
+  .betting_details{
+    margin-bottom: 10px;
+  }
+  .betting_field{
+    height: 400px;
+  }
+  .bet_orange,.bet_mint_green,.bet_red, .bet_blue{
+    width: 100px;
+    font-size: 16px;
+  }
+  .game_grid,.game_list{
+    grid-template-columns: 100%;
+  }
+} */
+
   /* Styles */
   /* .navbar-brand{
       display: none;
