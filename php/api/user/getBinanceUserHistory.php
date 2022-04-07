@@ -5,10 +5,7 @@
 
     $query = new Admin($db);
     $stmt = $query->getBinanceUserHistory();
-
-    // $stmt1 = $query->getBinanceHistory();
-    // $time = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
+    
     $sql = $stmt->rowCount();
     if($sql > 0){
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){

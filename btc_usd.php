@@ -291,7 +291,7 @@
                     </ul>
                 </div>
                 <div class="user_field">
-                    <div class="tab-content" style="overflow-y: scroll; height: 250px;">
+                    <div class="tab-content" style="overflow-y: scroll; height: 550px;">
                         <div id="result" class="tab-pane active">
                             <div class="table-responsive" style="padding: 28px 19px;">
                                 <table class="table table-striped table-condensed table-bordered">

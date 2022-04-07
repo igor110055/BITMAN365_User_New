@@ -1,30 +1,31 @@
 $(document).ready(function() { 
+    var formatter = new Intl.NumberFormat();
     $('#bet5k').click(function(){
-        var formatter = new Intl.NumberFormat();
+        //var formatter = new Intl.NumberFormat();
         document.getElementById('betAmount').disabled = true;
         $('#betAmount').val(formatter.format(5000) + '원');
         $('#totalBetAmount').val(formatter.format(1.95 * 5000) + '원');
     })
     $('#bet10k').click(function(){
-        var formatter = new Intl.NumberFormat();
+        // formatter = new Intl.NumberFormat();
         document.getElementById('betAmount').disabled = true;
         $('#betAmount').val(formatter.format(10000) + '원');
         $('#totalBetAmount').val(formatter.format(1.95 * 10000) + '원');
     })
     $('#bet50k').click(function(){
-        var formatter = new Intl.NumberFormat();
+        //var formatter = new Intl.NumberFormat();
         document.getElementById('betAmount').disabled = true;
         $('#betAmount').val(formatter.format(50000) + '원');
         $('#totalBetAmount').val(formatter.format(1.95 * 50000) + '원');
     })
     $('#bet100k').click(function(){
-        var formatter = new Intl.NumberFormat();
+        //var formatter = new Intl.NumberFormat();
         document.getElementById('betAmount').disabled = true;
         $('#betAmount').val(formatter.format(100000) + '원');
         $('#totalBetAmount').val(formatter.format(1.95 * 100000) + '원');
     })
     $('#bet500k').click(function(){
-        var formatter = new Intl.NumberFormat();
+        //var formatter = new Intl.NumberFormat();
         document.getElementById('betAmount').disabled = true;
         $('#betAmount').val(formatter.format(500000) + '원');
         $('#totalBetAmount').val(formatter.format(1.95 * 500000) + '원');

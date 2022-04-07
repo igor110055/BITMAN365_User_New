@@ -5,7 +5,7 @@
     <?php include __DIR__ . '/includes/navbar.php';?>
     <div class="div_container">
         <?php include __DIR__ . '/includes/header.php';?>
-        <div class="jumbotron jumbotron-fluid trading_title_details">
+       <div class="jumbotron jumbotron-fluid trading_title_details">
             <p class="trading_title">디지털 자산 거래를 고려해야 하는 이유</p>
             <p class="trading_subtitle">
                 디지털 자산은 무한한 잠재력과 높은 수익을
