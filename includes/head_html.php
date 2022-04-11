@@ -30,7 +30,7 @@
             }
         </style>
         
-        <title>BITMAN365</title>
+        <title>BITMOKO</title>
         <?php
             if (isset($linkcss) || is_array(@$linkcss)) {
                 foreach ($linkcss as $css) {
