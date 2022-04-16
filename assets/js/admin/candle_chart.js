@@ -231,6 +231,9 @@ $(function(){
                 location.reload(true);
             }
         }
+        function checkAvailableToPlayBTC(){
+            //
+        }
         updateClock();
         setInterval(updateClock, 1000);
     }

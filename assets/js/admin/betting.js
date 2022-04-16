@@ -115,6 +115,7 @@ function display_counter(){
     reshistory = setTimeout('getBettinghistory()',refresh)
     disbtn = setTimeout('disabledBtnOnBet()',refresh)
 }
+
 function disabledBtnOnBet(){
     var mytime = moment.tz(moment().add('1','minutes'),'Asia/Seoul').format("YYYY-MM-DD HH:mm");
     var conunix = Math.floor(new Date(mytime).getTime());

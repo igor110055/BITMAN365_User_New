@@ -6,6 +6,7 @@
     <?php
         if(@$_SESSION["user_session"]){
             echo '
+                <div id="station_data"></div>
                 <a href="#"><img src="assets/icons/ic_round-local-post-office.png" class="ic_round_1"></a>
                 <button class="navbar-toggler dropdown-toggle" type="button" id="navbar-collapse-3">
                     <img src="assets/icons/user_orange.png">
@@ -27,7 +28,8 @@
             <a id="brand_desk" href="./">BITMAN365</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./btc_usd.php">BTC/USD</a>
+                    <a class="nav-link" id="btn_btc_yes" href="./btc_usd.php">BTC/USD</a>
+                    <a class="nav-link" id="btn_btc_no" href="#" hidden>BTC/USD</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">ETH/USD</a>

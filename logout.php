@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	session_destroy();
-	header("Location: http://$_SERVER[HTTP_HOST]/BITMAN365");
+	header("Location: http://$_SERVER[HTTP_HOST]/BITMAN365/");
 
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: application/json; charset=UTF-8");

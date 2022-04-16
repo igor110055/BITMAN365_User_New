@@ -10,6 +10,7 @@
         private $tbl_bit_wss = "tbl_bit_wss";
         private $tbl_bit_wss_tmp = "tbl_bit_wss_tmp";
         private $tbl_bit_transaction_header = "tbl_bit_transaction_headers";
+        private $tbl_bit_game_type = "tbl_bit_game_types";
         private $tbl_bit_reserved_result = "tbl_bit_reserved_results";
         private $tbl_bit_inquiry = "tbl_bit_inquiries";
         
@@ -264,6 +265,7 @@
             }
             return false;
         }
+        
         public function postInquiry($arr){
             $query = "INSERT INTO ".$this->tbl_bit_inquiry." (t_Account_Code,t_Inquiry_Title,t_Inquiry_Details,t_Inquiry_Date) VALUES (:code,:title,:details,:date)";
             $stmt = $this->conn->prepare($query);
@@ -390,6 +392,20 @@
 
         public function getUserCashBalance(){
             $query = "SELECT * FROM ".$this->tbl_bit_transaction_header." WHERE t_Account_Code  = '".$_SESSION["user_session"]["u_Account_Code"]."' LIMIT 1"; 
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        public function getUserAvailableGame(){
+            $query = "SELECT * FROM ".$this->tbl_bit_game_type." WHERE g_Account_Code  = '".$_SESSION["user_session"]["u_Account_Code"]."' LIMIT 1"; 
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        public function checkUserForceLogout(){
+            $query = "SELECT * FROM ".$this->tbl_bit_users." WHERE u_Account_Code  = '".$_SESSION["user_session"]["u_Account_Code"]."' LIMIT 1"; 
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             return $stmt;

@@ -1,4 +1,18 @@
+
+$(document).ready(function(){    
+    loadstation();
+});
+
+function loadstation(){
+    $("#station_data").load("php/api/user/checkForceLogout.php");
+    setTimeout(loadstation, 2000);
+}
+
+
 $(function(){
+    $("#btn_btc_no").click(function(){
+        $("#modal-login").modal('show');
+    });
     // modal
     $(".modal-popup-login").click(function(){
         $("#modal-login").modal('show');
@@ -111,5 +125,20 @@ $(function(){
             var balance = response[0].t_Amount_in_Total;
             $('.cash_balance').text(formatter.format(balance));
         }
+    })
+    //fetching available game
+    $.ajax({
+        "url": "php/api/user/getAvailableGame.php",
+        "type": "GET",
+        "contentType": "application/json",
+        "async": false,
+        success: function(response) {
+            console.log(response[0]['g_BTCUSD']);
+            if(response[0]['g_BTCUSD'] == 0)
+            {
+                $('#btn_btc_yes').addClass('hidden');
+                $('#btn_btc_no').removeAttr('hidden');
+            }
+0        }
     })
 })

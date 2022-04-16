@@ -94,6 +94,7 @@
             U.u_Bank_Holder_Name,
             U.u_Account_Number,
             U.u_UseNoUse,
+            U.u_State,
             U.u_isAdminUser,
             H.t_Amount_in_Total,
             H.t_Currency
@@ -101,8 +102,13 @@
             JOIN ".$this->tbl_bit_access." A ON U.u_Access_Code = A.m_Access_Code 
             LEFT JOIN ".$this->tbl_bit_trans_headers." H ON U.u_Account_Code = H.t_Account_Code
             WHERE U.u_Account_Code = '$account_code' AND U.u_Password = '$password'
-            AND U.u_Status_Id NOT IN(1) AND U.u_UseNoUse IN(1) AND U.u_isAdminUser IN(0) LIMIT 1";
+            AND U.u_Status_Id NOT IN(1) AND U.u_UseNoUse IN(1) AND U.u_isAdminUser IN(0) LIMIT 1;
+            UPDATE ".$this->tbl_bit_users." SET u_State = :usenoneuse WHERE u_Account_Code = '$account_code'";
+           
 			$stmt = $this->conn->prepare($query);
+
+            $usenoneuse = "1";
+            $stmt->bindParam(':usenoneuse', $usenoneuse, PDO::PARAM_STR);
 			$stmt->execute();
             $num_row = $stmt->rowCount();
             if($num_row > 0 ){
