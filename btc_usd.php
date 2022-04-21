@@ -399,7 +399,7 @@
             mytime = setTimeout('datetime_today()',refresh)
         }
         function datetime_today(){
-            var date = new Date();
+            var date = new Date(moment.tz(moment(),'Asia/Seoul').format("YYYY-MM-DD HH:mm"));
             var d = date.getDate().toString().substr(-2);
             var h = ("0" + date.getHours()).substr(-2);
             var m = ("0" + date.getMinutes()).substr(-2);

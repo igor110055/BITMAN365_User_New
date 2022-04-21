@@ -43,6 +43,7 @@ $(document).ready(function() {
                     text: '베팅',
                     btnClass: 'btn-red',
                     action: function(){
+                       
                         var mytime = moment.tz(moment(),'Asia/Seoul').format("YYYY-MM-DD HH:mm");
                         var conunix = Math.floor(new Date(mytime).getTime() + 1000 * 60);
                         var mytimeunix = conunix / 1000;
@@ -60,7 +61,7 @@ $(document).ready(function() {
                     }
                 },
                 close: function () {
-                    location.reload(true);
+                    // location.reload(true);
                 }
             }
         });

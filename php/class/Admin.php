@@ -163,7 +163,7 @@
         }
 
         public function postPurchaserequest($arr){
-            $query = "INSERT INTO ".$this->tbl_bit_betting." (b_Account_Code,b_time,b_betAmount,b_Total_BetAmount,b_MultiplyBy,b_Trend) VALUES (:Account_Code,:time,:betAmount,:Total_BetAmount,:MultiplyBy,:Trend);
+            $query = "INSERT INTO ".$this->tbl_bit_betting." (b_Account_Code,b_Game_Type,b_time,b_betAmount,b_Total_BetAmount,b_MultiplyBy,b_Trend) VALUES (:Account_Code,:GameType,:time,:betAmount,:Total_BetAmount,:MultiplyBy,:Trend);
             UPDATE ".$this->tbl_bit_transaction_header." SET t_Amount_in_Total = :total_balance WHERE t_Account_Code  = '".$_SESSION["user_session"]["u_Account_Code"]."'";
             $stmt = $this->conn->prepare($query);
 
@@ -175,6 +175,7 @@
             $totalbetAmount = $arr->totalBetAmount;
             $multiplyby = $arr->multiplyby;
             $trend = ($arr->trend == 1) ? '매수' : '매도';
+            $gametype = 'BTCUSDT';
 
             $stmt->bindParam(':Account_Code', $accountcode, PDO::PARAM_STR);
             $stmt->bindParam(':time', $time, PDO::PARAM_STR);
@@ -182,6 +183,7 @@
             $stmt->bindParam(':Total_BetAmount', $totalbetAmount, PDO::PARAM_STR);
             $stmt->bindParam(':MultiplyBy', $multiplyby, PDO::PARAM_STR);
             $stmt->bindParam(':Trend', $trend, PDO::PARAM_STR);
+            $stmt->bindParam(':GameType', $gametype, PDO::PARAM_STR);
             $stmt->bindParam(':total_balance', $dbalance, PDO::PARAM_STR);
 
             if($stmt->execute()){
