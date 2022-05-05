@@ -62,7 +62,7 @@
 			$output .= '<td>'.$val["g_Registration_Time"].'</td>';
 			$output .= '</tr>';
 			$output .= '<tr class="rowContent">';
-			$output .= '<td colspan="4">'.$val["g_Details"].'</td>';
+			$output .= '<td style="padding-left: 20%;" colspan="4">'.$val["g_Details"].'</td>';
 			$output .= '</tr>';
 			$sNum ++;
 		}

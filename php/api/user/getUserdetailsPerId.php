@@ -8,7 +8,7 @@
     $query = new Admin($db);
     $auth = new Authentication($db);
 
-    $stmt = $query->getUsers();
+    // $stmt = $query->getUsers();
 
     $sql = $stmt->rowCount();
     

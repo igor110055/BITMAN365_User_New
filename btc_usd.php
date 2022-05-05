@@ -1,4 +1,3 @@
-
 <!-- header html -->
 <?php
     $linkcss = array(
@@ -22,7 +21,98 @@
     }
 ?>
     <style>
+     
+        .page_btc{ 
+            width: 96%;
+            margin-left: 2%;
+        }
+
+        .betting_details{
+            height: 550px;
+        }
+        .game_details{
+            height: 550;
+        }
+
         
+        #my_popup{
+            position: absolute;
+            width: 600px;
+            height: 200px;
+            left: 660px;
+            top: 270px;
+            background: #393E46;
+            border: 4px solid #B4BAC8;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display:none;
+        }
+
+        .success-btc{
+            width: 100%;
+            height: 38px;
+            top: 28px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            color: #FFFFFF;
+            margin: 10% 30%;
+        }
+
+        #my_popup_failed{
+            position: absolute;
+            width: 600px;
+            height: 200px;
+            left: 660px;
+            top: 270px;
+            background: #393E46;
+            border: 4px solid #B4BAC8;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display:none;
+        }
+
+        .failed-btc{
+            width: 100%;
+            height: 38px;
+            top: 28px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            color: #FFFFFF;
+            margin: 10% 10%;
+        }
+
+        #minimum_transaction{
+            position: absolute;
+            width: 600px;
+            height: 200px;
+            left: 660px;
+            top: 270px;
+            background: #393E46;
+            border: 4px solid #B4BAC8;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display:none;
+        }
+
+        .minimum_transaction-btc{
+            width: 100%;
+            height: 38px;
+            top: 28px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            color: #FFFFFF;
+            margin: 10% 10%;
+        }
+
         .navbar-collapse-1-mobile{
             padding: 200px 20px 0 20px;
         }
@@ -164,11 +254,12 @@
         if(count($_SESSION)){
             echo '
                 <div class="current_stocks_mobile">
-                    <a href="#"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance"></span> 원</span></a>
+                    <a href="#"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance" id="cashb"></span> 원</span></a>
                 </div>'
             ;
         }
     ?>
+         
     <!-- btc Section -->
     <div class="page_btc">
         <div class="game_grid">
@@ -229,7 +320,7 @@
                         </tr>
                         <tr style="background: #DDDDDE;">
                             <td class="fchild fchild1">예상실현금액</td>
-                            <td class="lchild"><input type="text" placeholder="0 원" id="totalBetAmount" disabled></td>
+                            <td class="lchild"><input type="text" placeholder="0" id="totalBetAmount" disabled></td>
                         </tr>
                         <tr style="background: #DDDDDE;">
                             <td colspan="2" class="lchild acomp">x 1.95</td>
@@ -237,37 +328,63 @@
                         <tr style="background: #DDDDDE;">
                             <td class="fchild fchild1">체결거래금액</td>
                             <td class="ablchild">
-                                <input type="text" placeholder="0 원" id="betAmount" class="betAmount">
+                                <input type="text" placeholder="0" id="betAmount" class="betAmount">
                                 <span class="bchild">최소거래금액 :</span>
-                                <span class="bchild pull-right">5,000원</span><br>
-                                <span class="bchild">최대거래금액 :</span>
-                                <span class="bchild pull-right">5,000,000원</span>
+                                <span class="bchild pull-right">10,000원</span><br>
+                                <!-- <span class="bchild">최대거래금액 :</span>
+                                <span class="bchild pull-right">5,000,000원</span> -->
+                            </td>
+                        </tr>
+                        <tr class="betting_button_field">
+                            <td colspan="2" class="btn_child1 text-center">
+                                <button type="button" id="bet10k" class="btn bet_orange1 btn_dis">10,000원</button>
+                                <button type="button" id="bet50k" class="btn bet_orange2 btn_dis">50,000원</button>
+                                <button type="button" id="bet100k" class="btn bet_orange3 btn_dis">100,000원</button>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" class="btn_child text-center">
-                                <button type="button" id="bet5k" value="5000" class="btn bet_orange btn_dis">5,000원</button>
-                                <button type="button" id="bet10k" value="10000" class="btn bet_orange btn_dis">10,000원</button>
-                                <button type="button" id="bet50k" value="50000" class="btn bet_orange btn_dis">50,000원</button>
+                                <button type="button" id="bet500k" class="btn bet_orange4 btn_dis">500,000원</button>
+                                <button type="button" id="bet1m" class="btn bet_orange5 btn_dis">1,000,000원</button>
+                                <button type="button" id="bet5m" class="btn bet_orange6 btn_dis">5,000,000원</button> 
+
+                                <?php   // <button type="button" id="editField" class="btn bet_mint_green btn_dis">정정</button> 
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="btn_child text-center">
+                                <button type="button" id="max" class="btn bet_max btn_dis">MAX</button>
+                                <!-- <button type="button" id="editField" class="btn bet_mint_green btn_dis">정정</button> -->
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" class="btn_child text-center">
-                                <button type="button" id="bet100k" value="100000" class="btn bet_orange btn_dis">100,000원</button>
-                                <button type="button" id="bet500k" value="500000" class="btn bet_orange btn_dis">500,000원</button>
-                                <button type="button" id="editField" class="btn bet_mint_green btn_dis">정정</button>
+                                <button type="button" id="sellBtn" class="btn bet_red btn_dis">SELL</button>
+                                <button type="button" id="buyBtn" class="btn bet_blue btn_dis">BUY</button>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="btn_child text-center">
-                                <button type="button" id="sellBtn" class="btn bet_red btn_dis">매수 신청</button>
-                                <button type="button" id="buyBtn" class="btn bet_blue btn_dis">매도 신청</button>
+                            <td colspan="4" class="btn_child text-center">
+                                <button type="button" id="reset" class="btn bet_reset btn_dis">RESET</button>
+                                <!-- <button type="button" id="editField" class="btn bet_mint_green btn_dis">정정</button> -->
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
+        <div id="my_popup">
+            <p class="success-btc">성공적으로 베팅!</p>
+        </div>
+        <div id="my_popup_failed">
+            <p class="failed-btc">당신은 균형이 충분하지 않습니다!</p>
+        </div>
+        <div id="minimum_transaction">
+            <p class="minimum_transaction-btc">최소 거래 금액은 10000입니다.!</p>
+        </div>
+
+        <span hidden class="cash_balance" id="cashb"></span>
         <div class="game_list" id="reloadPage">
             <div class="game_details">
                 <div class="game_title">
@@ -390,25 +507,6 @@
 
     <!-- script -->
     <?php include __DIR__ . '/includes/script.php';?>
-    <script>
-        function display_time() {
-            display_counter();
-        }
-        function display_counter(){
-            var refresh = 1000; // Refresh rate in milli seconds
-            mytime = setTimeout('datetime_today()',refresh)
-        }
-        function datetime_today(){
-            var date = new Date(moment.tz(moment(),'Asia/Seoul').format("YYYY-MM-DD HH:mm"));
-            var d = date.getDate().toString().substr(-2);
-            var h = ("0" + date.getHours()).substr(-2);
-            var m = ("0" + date.getMinutes()).substr(-2);
-            var formattedTime = d + '일 ' + h + '시 '+ m + '분';
-
-            $('#datetoday').text(formattedTime);
-        }
-        display_counter();
-        datetime_today();
-    </script>
+    
     </body>
 </html>

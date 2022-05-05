@@ -15,13 +15,15 @@
             display: none;
         }
         .page-guide{
-            padding: 20px 220px;
+            padding: 20px;
             width: 100%;
         }
         .card{
             box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px 10px 4px 4px;
             height: 747px;
+            width: 108%;
+            margin-left: -4%;
         }
         .card-header{
             background: #393E46;

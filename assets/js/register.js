@@ -14,20 +14,23 @@ $( document ).ready(function() {
     });
     $.validator.addMethod("accountcodeRegex", function (value, element) {
         let acctcode = value;
-        if (!(/^(?=.*[a-z])(?=.*[A-Z])(.{4,12}$)/.test(acctcode))) {
+        if (!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(.{4,12}$)/.test(acctcode))) {
             return false;
         }
         return true;
     }, function (value, element) {
         let acctcode = $(element).val();
         if (!(/^(.{4,12}$)/.test(acctcode))) {
-            return '영어소문자+숫자로 4~12자까지 가능합니다. / 이미 존재하는 아이디입니다.';
+            return '영어소문자+숫자로 4~12자까지 가능합니다.';
         }
         else if (!(/^(?=.*[a-z])/.test(acctcode))) {
-            return '영어소문자+숫자로 4~12자까지 가능합니다. / 이미 존재하는 아이디입니다.';
+            return '영어소문자+숫자로 4~12자까지 가능합니다.';
+        }
+        else if (!(/^(?=.*[A-Z])/.test(acctcode))) {
+            return '영어소문자+숫자로 4~12자까지 가능합니다.';
         }
         else if (!(/^(?=.*[0-9])/.test(acctcode))) {
-            return '영어소문자+숫자로 4~12자까지 가능합니다. / 이미 존재하는 아이디입니다.';
+            return '영어소문자+숫자로 4~12자까지 가능합니다.';
         }
         return false;
     });
@@ -182,6 +185,24 @@ $( document ).ready(function() {
     function check_account_exists(){
         $('#accnt_id_dup_chk').click(function(){
             let code = $('#s_account_code').val();
+
+            // console.log(code);
+            if(code == ""){
+                $('.error_id_chk').text('계정 이름 입력')
+            }
+            else if (!(/^(.{4,12}$)/.test(code))) {
+                return '영어소문자+숫자로 4~12자까지 가능합니다.';
+            }
+            else if (!(/^(?=.*[a-z])/.test(code))) {
+                return '영어소문자+숫자로 4~12자까지 가능합니다.';
+            }
+            else if (!(/^(?=.*[A-Z])/.test(code))) {
+                return '영어소문자+숫자로 4~12자까지 가능합니다.';
+            }
+            else if (!(/^(?=.*[0-9])/.test(code))) {
+                return '영어소문자+숫자로 4~12자까지 가능합니다.';
+            }
+            else{
             $.ajax({
                 type: "POST",
                 url: "./php/api/checkAccountIdifExists.php",
@@ -189,36 +210,56 @@ $( document ).ready(function() {
                 data: JSON.stringify(code),
                 success: function(request){
                     if(request == 1){
+                        //overlap
                         $('.error_id_chk').text('중복')
                         $('#dummy_code').val('')
                     }
                     else{
+                        //possible
                         $('.error_id_chk').text('가능')
                         $('#dummy_code').val(1)
                     }
                 }
             });
+            return false;
+        }
         })
     }
     function check_nickname_exists(){
         $('#nickname_dup_chk').click(function(){
             let nick = $('#nickname').val();
+
+            if(nick == ""){
+                $('.error_nn_chk').text('계정 이름 입력')
+            }
+            else if (!(/^(.{3,7}$)/.test(nick))) {
+                return '영어소문자+숫자로 4~12자까지 가능합니다.';
+            }
+          
+            else{
             $.ajax({
                 type: "POST",
                 url: "./php/api/checknicknameifexists.php",
                 "async": false,
                 data: JSON.stringify(nick),
+                
                 success: function(request){
                     if(request == 1){
+                        //overlap
                         $('.error_nn_chk').text('중복')
                         $('#dummy_nickname').val('')
+                        // $('.errornickname').text("이미 존재하는 닉네임입니다.")
                     }
                     else{
+                           //possible
                         $('.error_nn_chk').text('가능')
                         $('#dummy_nickname').val(1)
+                        $('.errornickname').hide()
                     }
                 }
             });
+            return false;
+        }
         })
     }
 

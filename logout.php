@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	session_destroy();
-	header("Location: http://$_SERVER[HTTP_HOST]/BITMAN365/");
+	header("Location: http://$_SERVER[HTTP_HOST]/BITMAN365User");
 
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: application/json; charset=UTF-8");
@@ -15,5 +15,7 @@
 	$database = new Database();
     $db = $database->getConnection();
 	$query = new User($db);
+
+	print_r($_GET["code"]);
 	$stmt = $query->destroyUserSession($_GET["code"]);
 ?>

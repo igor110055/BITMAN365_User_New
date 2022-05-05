@@ -1,11 +1,73 @@
 
+
 $(document).ready(function(){    
     loadstation();
 });
 
 function loadstation(){
-    $("#station_data").load("php/api/user/checkForceLogout.php");
-    setTimeout(loadstation, 2000);
+    // $("#station_data").load("php/api/user/checkForceLogout.php");
+    // if($_SESSION["user_session"]){
+        $.ajax({
+            "url": "php/api/user/checkForceLogout.php",
+            "type": "GET",
+            "contentType": "application/json",
+            "async": false,
+            success: function(response) {
+                var remaining_balance = response['balance'][0]['t_Amount_in_Total'];
+                var balance = new Intl.NumberFormat().format(remaining_balance);
+
+
+                $(".note_notification").text(response.noteCnt);
+                $('.cash_balance').text(balance);
+                // $('.current_stocks').text(remaining_balance);
+                // var note_result = response.note;
+
+                // note_result.forEach(function (el) {
+
+                //     console.log(el.e_Id);
+
+                //     if(el.e_State == "1"){
+                //         $(".unread").text("읽지 않음");
+                //     }
+                //     else{
+                //         $(".unread").text("읽음");
+                //     }
+                    
+                // });
+
+                // console.log(response['note']['1']['e_Id']);
+
+                // $(".unread").text(response['note'][0]['e_Id']);
+
+                var state = response['check'][0]['u_State'];
+                if(response['check'][0]['u_State'] == 3){
+                    window.location.href="./logout.php?code=state";
+                }
+
+           }
+        });
+
+        // $.ajax({
+        //     "url": "php/api/getNoteList.php",
+        //     "type": "GET",
+        //     "contentType": "application/json",
+        //     "async": false,
+        //     success: function(response) {
+
+        //         // var status = response.note
+
+
+        //         // $(".unread").val(status);
+               
+
+        //    }
+        // }); 
+
+    
+    setTimeout(loadstation, 1000);
+
+    // }
+
 }
 
 
@@ -136,9 +198,9 @@ $(function(){
             console.log(response[0]['g_BTCUSD']);
             if(response[0]['g_BTCUSD'] == 0)
             {
-                $('#btn_btc_yes').addClass('hidden');
+                $('#btn_btc_yes').addClass("hidden");
                 $('#btn_btc_no').removeAttr('hidden');
             }
-0        }
+       }
     })
 })

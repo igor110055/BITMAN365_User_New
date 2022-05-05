@@ -5,8 +5,8 @@
     $db = $database->getConnection();
 
     $query = new User($db);
-    $auth = new Authentication($db);
-    $get_ip = new Getuseripaddress($db);
+    $auth = new Authentication();
+    $get_ip = new Getuseripaddress();
     $ip = $get_ip->GetIpAddress();
     $detect = new Mobile_Detect;
 

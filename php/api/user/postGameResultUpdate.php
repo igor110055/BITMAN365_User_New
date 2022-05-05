@@ -9,4 +9,4 @@
     $unixtime = json_decode(file_get_contents("php://input"));
     $gameupdate = $query->postGameResultUpdate($unixtime);
     $userUpdate = $query->postGameResultUser($unixtime);
-    echo json_encode($gameupdate);
+    echo json_encode($gameupdate,$userUpdate);

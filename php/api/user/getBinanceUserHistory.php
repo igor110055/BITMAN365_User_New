@@ -18,7 +18,4 @@
             ];
         }
         echo json_encode( $array);
-    }else{
-        http_response_code(404);
-        echo json_encode('No Record Found.');
     }

@@ -1,11 +1,5 @@
 <?php
 	class Getuseripaddress{  
-		//db stuff 
-		private $conn;
-		//properties  
-		public function __construct($db){
-			$this->conn = $db;
-		}
 
         public function GetIpAddress() {
                 $ipaddress = '';

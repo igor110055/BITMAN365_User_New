@@ -22,10 +22,15 @@
             width: 100%;
             padding: 20px 250px;
         }
+      
         .div_layout .card,.div_layout_note .card{
             box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px 10px 4px 4px;
             height: 345px;
+        }
+        .card{
+            width: 95%;
+            margin-left: 2%;
         }
         .card-header{
             background: #393E46;
@@ -381,14 +386,14 @@
                 <div class="card-body">
                     <div class="inline_grp">
                         <button class="btn btn_accountno" type="button">입금 계좌</button>
-                        <input type="text" class="accountno" placeholder="입금 계좌는 고객센터로 문의주시기 바랍니다.">
+                        <input type="text" disabled class="accountno" placeholder="입금 계좌는 고객센터로 문의주시기 바랍니다.">
                     </div>
                     <div class="inline_grp">
                         <button class="btn btn_accountholder" type="button">예금주</button>
-                        <input type="text" class="accountholder form-control" placeholder="입금 계좌는 고객센터로 문의주시기 바랍니다.">
+                        <input type="text" disabled class="accountholder form-control" placeholder="입금 계좌는 고객센터로 문의주시기 바랍니다.">
                     </div>
                     <div class="inline_grp">
-                        <button class="btn btn_amount" type="button">예금주</button>
+                        <button class="btn btn_amount" type="button">입금신청</button>
                         <input type="text" id="depositamount" name="depositamount" class="input_amnt form-control" placeholder="원">
                     </div>
                     <center><button class="btn btn_deposit" type="button">입금 신청하기</button></center>

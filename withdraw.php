@@ -32,6 +32,10 @@
             border-radius: 10px 10px 4px 4px;
             height: 287px;
         }
+        .card{
+            width: 97%;
+            margin-left: 2%;
+        }
         .card-header{
             background: #393E46;
             text-align: center;
@@ -410,7 +414,7 @@
                         <button class="btn_title btn_amount" type="button">출금금액</button>
                         <input type="text" id="withdrawamount" name="withdrawamount" class="input_amnt form-control" placeholder="원">
                     </div>
-                    <center><button class="btn btn_withdraw" type="button">입금 신청하기</button></center>
+                    <center><button class="btn btn_withdraw" type="button">출금 신청하기</button></center>
                 </div>
             </div>
             <div class="arrow_icon">
@@ -424,7 +428,7 @@
                 <div class="card-body">
                     <label class="ntitle">현재 보유 금액</label>
                     <div class="currentAcmount" style="color: #888888;"><span class="cash_balance" id="cashb"></span> 원</div>
-                    <label class="ntitleacc">입금 후 예상 보유 금액</label>
+                    <label class="ntitleacc">출금 후 예상 보유금액</label>
                     <div class="currentAcmount"><span class="new_balance"></span> 원</div>
                 </div>
             </div>
@@ -432,13 +436,13 @@
         <div class="div_layout_note">
             <div class="card">
                 <div class="card-header">
-                    입금신청 이용방법
+                    출금신청 이용방법
                 </div>
                 <div class="card-body">
                     <ol>
                         <li>출금 신청 전, 출금은행 및 계좌번호 확인</li>
                         <li>우측 상단의 “보유 금액"에서 출금 가능한 금액 확인</li>
-                        <li>좌측 상단의 “입금 신청하기”에서 출금금액란에 원하시는 출금금액을 입력</li>
+                        <li>좌측 상단의 “출금 신청하기”에서 출금금액란에 원하시는 출금금액을 입력</li>
                         <li>출금 신청하기 버튼을 클릭</li>
                     </ol>
                 </div>

@@ -41,6 +41,12 @@
         .text_signup{
             padding: 20px;
         }
+        .justify-content-center{
+            width: 200%;
+            margin: 0% -50%;
+        }
+
+        
     </style>
     <!-- navbar -->
     <?php include __DIR__ . '/includes/navbar.php';?>
@@ -51,7 +57,7 @@
             <input type="hidden" name="domain" value="<?=$_SERVER["SERVER_NAME"]?>">
             <input type="hidden" name="userip" value="<?=$getipinfo?>">
             <div class="row justify-content-center">
-                <div class="col-sm-10">
+                <div class="col-sm-12">
                     <div class="form-group">
                         <label><b>회원 정보</b> <span class="error_acct_dup"></span></label>
                         <div class="input-group">
@@ -68,7 +74,7 @@
                             <input type="hidden" name="dummy_nickname" id="dummy_nickname">
                             <button type="button" class="btn btn_signup_orange text-white btn-lg btn-shadow" id="nickname_dup_chk"><span class="error_nn_chk">중복 확인</span></button>
                         </div>
-                        <span class="errornickname"></span>
+                        <span class="errornickname" style="font-size: 16px; color: #FF787B;"></span>
                     </div>
                     <div class="form-group">
                         <label>비밀번호 </label>

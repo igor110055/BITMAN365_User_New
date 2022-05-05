@@ -1,11 +1,5 @@
 <?php
 	class Authentication{  
-		//db stuff 
-		private $conn;
-		//properties  
-		public function __construct($db){
-			$this->conn = $db;
-		}
 
         public function encrypt_decrypt($action, $string) {
             $output = false;

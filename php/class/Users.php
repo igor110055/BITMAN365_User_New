@@ -6,11 +6,14 @@
         private $tbl_bit_access = "tbl_bit_access";
         private $tbl_bit_trans_headers = "tbl_bit_transaction_headers";
         private $tbl_bit_bank = "tbl_bit_banklists";
-        private $tbl_bit_cashin = "tbl_bit_transactions_cashin_details";
-        private $tbl_bit_cashout = "tbl_bit_transactions_withdraw_details";
         private $tbl_bit_user_log = "tbl_bit_user_logs";
         private $tbl_bit_user_log_header = "tbl_bit_user_log_headers";
         private $tbl_bit_trans_history = "tbl_bit_transaction_histories";
+        private $tbl_bit_Money_transaction = "tbl_bit_transaction_headers";
+        private $tbl_bit_sound = "tbl_bit_sounds";
+        private $tbl_bit_note = "tbl_bit_notes";
+
+        
 
         //properties  
 		public function __construct($db){
@@ -83,43 +86,44 @@
             return false;
 		}
 
-		public function login($account_code,$password){
-			$query = "SELECT
-            U.u_Account_Code,
-            U.u_Nickname,
-            U.u_Password,
-            U.u_Mobile_Number,
-            U.u_Ip_Address,
-            U.u_Access_Code,
-            U.u_Bank_Holder_Name,
-            U.u_Account_Number,
-            U.u_UseNoUse,
-            U.u_State,
-            U.u_isAdminUser,
-            H.t_Amount_in_Total,
-            H.t_Currency
-            FROM ".$this->tbl_bit_users." AS U 
-            JOIN ".$this->tbl_bit_access." A ON U.u_Access_Code = A.m_Access_Code 
-            LEFT JOIN ".$this->tbl_bit_trans_headers." H ON U.u_Account_Code = H.t_Account_Code
-            WHERE U.u_Account_Code = '$account_code' AND U.u_Password = '$password'
-            AND U.u_Status_Id NOT IN(1) AND U.u_UseNoUse IN(1) AND U.u_isAdminUser IN(0) LIMIT 1;
-            UPDATE ".$this->tbl_bit_users." SET u_State = :usenoneuse WHERE u_Account_Code = '$account_code'";
-           
-			$stmt = $this->conn->prepare($query);
-
-            $usenoneuse = "1";
-            $stmt->bindParam(':usenoneuse', $usenoneuse, PDO::PARAM_STR);
-			$stmt->execute();
-            $num_row = $stmt->rowCount();
-            if($num_row > 0 ){
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                    $_SESSION['user_session'] = $row;
-                    return true;
-                }
-            }else{
-                return false;
-            }
-        }
+        public function login($account_code,$password){
+            $query = "SELECT
+                  U.u_Account_Code,
+                  U.u_Nickname,
+                  U.u_Password,
+                  U.u_Mobile_Number,
+                  U.u_Ip_Address,
+                  U.u_Access_Code,
+                  U.u_Bank_Holder_Name,
+                  U.u_Recommended_Point,
+                  U.u_Account_Number,
+                  U.u_UseNoUse,
+                  U.u_State,
+                  U.u_isAdminUser,
+                  H.t_Amount_in_Total,
+                  H.t_Currency
+                  FROM ".$this->tbl_bit_users." AS U 
+                  JOIN ".$this->tbl_bit_access." A ON U.u_Access_Code = A.m_Access_Code 
+                  LEFT JOIN ".$this->tbl_bit_trans_headers." H ON U.u_Account_Code = H.t_Account_Code
+                  WHERE U.u_Account_Code = '$account_code' AND U.u_Password = '$password'
+                  AND U.u_Status_Id NOT IN(1) AND U.u_UseNoUse IN(1) AND U.u_isAdminUser IN(0) LIMIT 1;
+                  UPDATE ".$this->tbl_bit_users." SET u_State = :usenoneuse WHERE u_Account_Code = '$account_code'";
+                 
+            $stmt = $this->conn->prepare($query);
+      
+                  $usenoneuse = "1";
+                  $stmt->bindParam(':usenoneuse', $usenoneuse, PDO::PARAM_STR);
+            $stmt->execute();
+                  $num_row = $stmt->rowCount();
+                  if($num_row > 0 ){
+                      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                          $_SESSION['user_session'] = $row;
+                          return true;
+                      }
+                  }else{
+                      return false;
+                  }
+              }
 
         public function userLogs($isType,$account_code,$get_ip){
             $query = "INSERT INTO ".$this->tbl_bit_user_log." (l_Account_Code,l_LogInDateTime,l_Current_Ip,l_Access_Domain,l_Device_Use,l_Browser_Use) VALUES (:AccountCode,:LogInDateTime,:CurrentIp,:AccessDomain,:DeviceUse,:BrowserUse);
@@ -165,38 +169,68 @@
         }
 
         public function postDeposit($data){
-            $query = "INSERT INTO ".$this->tbl_bit_cashin." (t_Account_Code, t_Total_Amount_Cash_In, t_Cashin_Date) VALUES (:code, :depamount, :date);
-            INSERT INTO ".$this->tbl_bit_trans_history." (h_Transaction_Type, h_Account_Code, h_Event, h_Contract_Time, h_Plus, h_Minus, h_Current_Balance, h_Processing_Time) VALUES (:Transaction_Type, :Account_Code, :Event, :Contract_Time, :Plus, :Minus, :Current_Balance, :Process_Time)";
+            $query = "UPDATE ".$this->tbl_bit_sound." SET s_TypeName = :Sound, s_TypeId = :soundStatus WHERE s_Notif_Type = :notifType;
+            INSERT INTO ".$this->tbl_bit_trans_history." (h_Transaction_Type, h_Account_Code, h_Event, h_Contract_Time, h_Plus, h_Minus, h_Current_Balance, h_Processing_Time, h_Status) VALUES (:Transaction_Type, :code, :Event, :Contract_Time, :Plus, :Minus, :Current_Balance, :Process_Time, :Status)";
+
             $stmt = $this->conn->prepare($query);
 
             $balance = $this->getUserCashBalance();
-            $code = $_SESSION["user_session"]["u_Account_Code"];
+
             $depamount = $data[0]->depositamount;
-            $date = date('Y-m-d h:i:s');
-            //////history
+
             $transtype = 'Deposit';
-            $event = '증금';
-            $ctime = '-';
+            $code = $_SESSION["user_session"]["u_Account_Code"];
+            $event = '입금';
+            $ctime = date('Y-m-d h:i:s');
+            $depamount = $data[0]->depositamount;
             $plus = $depamount;
             $minus = 0;
-            $cbalance = (count($balance) > 0) ? $balance[0]["t_Amount_in_Total"] : '0';
+            $cbalance = $balance[0]["t_Amount_in_Total"];
+            $processingTime = '-';
+            $status = 0;
+            $sound = 'on';
+            $soundStatus = 1;
+            $notifType = 'DepositApplication';
 
-            $stmt->bindParam(':code', $code, PDO::PARAM_STR);
-            $stmt->bindParam(':depamount', $depamount, PDO::PARAM_STR);
-            $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+
             $stmt->bindParam(':Transaction_Type', $transtype, PDO::PARAM_STR);
-            $stmt->bindParam(':Account_Code', $code, PDO::PARAM_STR);
+            $stmt->bindParam(':code', $code, PDO::PARAM_STR);
             $stmt->bindParam(':Event', $event, PDO::PARAM_STR);
             $stmt->bindParam(':Contract_Time', $ctime, PDO::PARAM_STR);
             $stmt->bindParam(':Plus', $plus, PDO::PARAM_STR);
             $stmt->bindParam(':Minus', $minus, PDO::PARAM_STR);
             $stmt->bindParam(':Current_Balance', $cbalance, PDO::PARAM_STR);
-            $stmt->bindParam(':Process_Time', $date, PDO::PARAM_STR);
+            $stmt->bindParam(':Process_Time', $processingTime, PDO::PARAM_STR);
+            $stmt->bindParam(':Status', $status, PDO::PARAM_STR);
+            $stmt->bindParam(':Sound', $sound, PDO::PARAM_STR);
+            $stmt->bindParam(':soundStatus', $soundStatus, PDO::PARAM_STR);
+            $stmt->bindParam(':notifType', $notifType, PDO::PARAM_STR);
+
             if($stmt->execute()){
                 return true;
             }
             return false;
         }
+
+        public function postNoteUpdate($get){
+
+            $query = "UPDATE ".$this->tbl_bit_note." 
+            SET e_State = :State WHERE e_Id = :Id";
+
+            $stmt = $this->conn->prepare($query);
+
+            $id = $get["id"];
+            $state = 1;
+
+            $stmt->bindParam(':Id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':State', $state, PDO::PARAM_STR);
+            if($stmt->execute()){
+                return true;
+            }
+            return false;
+        }
+
+ 
 
         public function getUserCashBalance(){
             $query = "SELECT * FROM ".$this->tbl_bit_trans_headers." WHERE t_Account_Code  = '".$_SESSION["user_session"]["u_Account_Code"]."' LIMIT 1"; 
@@ -207,34 +241,43 @@
         }
 
         public function postWithdraw($data){
-            $query = "INSERT INTO ".$this->tbl_bit_cashout." (t_Account_Code, t_Total_Amount_Cash_Out, t_Cashout_Date) VALUES (:code, :withamount, :date);
-            INSERT INTO ".$this->tbl_bit_trans_history." (h_Transaction_Type, h_Account_Code, h_Event, h_Contract_Time, h_Plus, h_Minus, h_Current_Balance, h_Processing_Time) VALUES (:Transaction_Type, :Account_Code, :Event, :Contract_Time, :Plus, :Minus, :Current_Balance, :Process_Time)";
+            $query = "UPDATE ".$this->tbl_bit_Money_transaction." SET t_Amount_in_Total = :Current_Balance WHERE t_Account_Code = :code;
+            UPDATE ".$this->tbl_bit_sound." SET s_TypeName = :Sound, s_TypeId = :soundStatus WHERE s_Notif_Type = :notifType;
+            INSERT INTO ".$this->tbl_bit_trans_history." (h_Transaction_Type, h_Account_Code, h_Event, h_Contract_Time, h_Plus, h_Minus, h_Current_Balance, h_Processing_Time, h_Status) VALUES (:Transaction_Type, :code, :Event, :Contract_Time, :Plus, :Minus, :Current_Balance, :Process_Time, :Status)";
+
             $stmt = $this->conn->prepare($query);
 
             $balance = $this->getUserCashBalance();
-            $code = $_SESSION["user_session"]["u_Account_Code"];
+
             $withamount = $data[0]->withdrawtamount;
-            $date = date('Y-m-d h:i:s');
-            //////history
+
             $transtype = 'Withdraw';
+            $code = $_SESSION["user_session"]["u_Account_Code"];
             $event = '출금';
-            $ctime = '-';
+            $ctime = date('Y-m-d h:i:s');
             $plus = 0;
             $minus = $withamount;
-            $cbalance = $balance[0]["t_Amount_in_Total"];
+            $cbalance = $balance[0]["t_Amount_in_Total"] - $withamount;
+            $processingTime = '-';
+            $status = 0;
+            $sound = 'on';
+            $soundStatus = 1;
+            $notifType = 'WithdrawApplication';
 
-            $stmt->bindParam(':code', $code, PDO::PARAM_STR);
-            $stmt->bindParam(':withamount', $withamount, PDO::PARAM_STR);
-            $stmt->bindParam(':date', $date, PDO::PARAM_STR);
-            ////history
+
             $stmt->bindParam(':Transaction_Type', $transtype, PDO::PARAM_STR);
-            $stmt->bindParam(':Account_Code', $code, PDO::PARAM_STR);
+            $stmt->bindParam(':code', $code, PDO::PARAM_STR);
             $stmt->bindParam(':Event', $event, PDO::PARAM_STR);
             $stmt->bindParam(':Contract_Time', $ctime, PDO::PARAM_STR);
             $stmt->bindParam(':Plus', $plus, PDO::PARAM_STR);
             $stmt->bindParam(':Minus', $minus, PDO::PARAM_STR);
             $stmt->bindParam(':Current_Balance', $cbalance, PDO::PARAM_STR);
-            $stmt->bindParam(':Process_Time', $date, PDO::PARAM_STR);
+            $stmt->bindParam(':Process_Time', $processingTime, PDO::PARAM_STR);
+            $stmt->bindParam(':Status', $status, PDO::PARAM_STR);
+            $stmt->bindParam(':Sound', $sound, PDO::PARAM_STR);
+            $stmt->bindParam(':soundStatus', $soundStatus, PDO::PARAM_STR);
+            $stmt->bindParam(':notifType', $notifType, PDO::PARAM_STR);
+
             if($stmt->execute()){
                 return true;
             }

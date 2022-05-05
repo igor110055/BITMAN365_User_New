@@ -1,8 +1,11 @@
+
 <nav class="navbar navbar-expand-lg navbar-custom" role="navigation">
+    
     <button class="navbar-toggler" type="button" id="navbar-collapse-1">
         <span class="navbar-toggler-icon"></span>
         <a class="navbar-brand-mobile" href="./">BITMAN365</a>
     </button>
+   
     <?php
         if(@$_SESSION["user_session"]){
             echo '
@@ -19,7 +22,10 @@
                 </button>
             ';
         }
-    ?>
+        
+    ?> 
+
+
     <!-- 1920 pixels -->
     <div class="collapse navbar-collapse">
         <?php
@@ -28,7 +34,7 @@
             <a id="brand_desk" href="./">BITMAN365</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" id="btn_btc_yes" href="./btc_usd.php">BTC/USD</a>
+                    <a class="nav-link"  id="btn_btc_yes" href="./btc_usd.php">BTC/USD</a>
                     <a class="nav-link" id="btn_btc_no" href="#" hidden>BTC/USD</a>
                 </li>
                 <li class="nav-item">
@@ -117,27 +123,28 @@
                 <?php
                     if(@$_SESSION["user_session"]){
                         echo '<li class="nav-item">
-                                <a href="#" style="text-decoration: none;"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance"></span>원</span></a>
+                                <a href="./userTransactionHistory.php" style="text-decoration: none;"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance"></span>원</span></a>
                             </li>
                             <li class="nav-item">
-                                <a href="#"><span class="ic_rounds"><img src="assets/icons/ic_round-local-post-office.png" class="ic_round"></span></a>
+                            <a href="#"><div class="info_content" title="note notification"><span class="note_notification"></span></div></a>
+                            <a href="./note.php"><span class="ic_rounds"><img src="assets/icons/ic_round-local-post-office.png" class="ic_round"></span></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <div class="dropdown">
                                     <span class="user_oranges" onclick="dropdown()"><img src="assets/icons/user_orange.png" class="user_orange dropbtn"></span>
-                                    <div id="myDropdown" class="dropdown-content" style="padding: 15px;">
-                                        <div style="background: #FFFFFF; border-radius: 10px; font-size: 16px; height: 44px; font-weight: 700; padding: 10px;">
-                                            닉네임닉네임닉
-                                            <img src="assets/icons/akar-icons_sound-on.png" style="padding: 0 0 0 80px;">
+                                    <div id="myDropdown" class="dropdown-content" style="padding: 15px; background: #DDDDDE; ">
+                                        <div style="background: #F7F7F7;  border-radius: 10px; font-size: 16px; height: 44px; font-weight: 700; padding: 10px;">
+                                            '.(@$_SESSION["user_session"]["u_Nickname"]).'
+                                            <img src="assets/icons/akar-icons_sound-on.png" style="float:right;">
                                         </div>
-                                        <p style="margin-top: 10px; color: #888888; font-size: 14px;">추천지점 : &nbsp;&nbsp;강남점</p>
+                                        <p style="margin-top: 10px; margin-left: 10px; color: #888888; font-size: 14px;">'.(@$_SESSION["user_session"]["u_Recommended_Point"]).'</p>
                                         <div style="background: #C4C4C4; border-radius: 10px; height: 157px; width: 100%; padding: 10px; margin-bottom: 5px;">
-                                            <button type="button" class="btn" style="width: 100%; margin-bottom: 10px; text-align: left; font-weight: 700;">입출금 내역</button>
-                                            <button type="button" class="btn" style="width: 100%; margin-bottom: 10px; text-align: left; font-weight: 700;">거래내역</button>
-                                            <button type="button" class="btn" style="width: 100%; margin-bottom: 10px; text-align: left; font-weight: 700;">개인정보 설정</button>
+                                            <a href="./userWithdrawAndDepositHistory.php" button type="button" class="btn" style="width: 100%; margin-bottom: 10px; text-align: left; font-weight: 700;">입출금 내역</a></button>
+                                            <a href="./userTransactionHistory.php" button type="button" class="btn" style="width: 100%; margin-bottom: 10px; text-align: left; font-weight: 700;">거래내역</a></button>
+                                            <a href="./userPrivacySettings.php" button type="button" class="btn" style="width: 100%; margin-bottom: 10px; text-align: left; font-weight: 700;">개인정보 설정</a></button>
                                         </div>
                                             <center>
-                                                <a href="#" data-code="'.@$_SESSION["user_session"]["u_Account_Code"].'" type="button" class="btn btnlogout" style="border-radius: 10px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); box-sizing: border-box; border: 0.5px solid #FFFFFF; background: #f1f1f1; padding: 10px; height: 40px; width: 120px;">
+                                                <a href="#" data-code="'.@$_SESSION["user_session"]["u_Account_Code"].'" type="button" class="btn btnlogout" style="border-radius: 10px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); box-sizing: border-box; border: 0.5px solid #FFFFFF; text-align: center; background: #f1f1f1; height: 40px; width: 120px;">
                                                     로그아웃
                                                 </a>
                                             </center>
@@ -178,6 +185,7 @@
     </div>
 </div>
 <div class="display_nonlog">
+    
     <form method="POST" class="form_login_mobile">
         <div class="form-group text-left mt-4">
             <label for="accountid"><h5 class="text-yellow">아이디</h5></label>
@@ -195,16 +203,23 @@
     </form>
 </div>
 <div class="display_log">
+
     <div style="text-align:center">
+    <!-- <div class="current_stocks_mobile">
+        <a href="#"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance"></span> 원</span></a>
+    </div> -->
         <button type="button" class="btn btn-gray btn_log_mobile">닉네임닉네임닉 <img src="assets/icons/akar-icons_sound-on.png" class="soung_img"></button>
         <p class="rec_point">추천지점 : 강남점</p>
         <div class="layout_bg">
-            <button type="button" class="btn btn_log_mobile">입출금 내역</button>
-            <button type="button" class="btn btn_log_mobile">거래내역</button>
-            <button type="button" class="btn btn_log_mobile">개인정보 설정</button>
+            <a href="./userWithdrawAndDepositHistory.php" button type="button" class="btn btn_withdraw_deposit">입출금 내역</a></button>
+            <a href="./userTransactionHistory.php" button type="button" class="btn btn_transaction_history">거래내역</a></button>
+            <a href="./userPrivacySettings.php" button type="button" class="btn btn_privacy_settings">개인정보 설정</a></button>
         </div>
-        <div class="btn_logs_mobile">
-            <a href="#" data-code="<?=$_SESSION["user_session"]["u_Account_Code"]?>" class="btn btn_log_mobile btn_logout">입출금 내역</a>
+        <div class="logout_mobile">
+            <a href="#" data-code="<?=$_SESSION["user_session"]["u_Account_Code"]?>" type = "button" class="btn btn_logout_mobile">로그아웃</a>
         </div>
     </div>
 </div>
+<!-- <div class="current_stocks_mobile">
+        <a href="#"><span class="current_stocks"><img src="assets/icons/dollar_mint.png" class="dollar_mint"><span class="cash_balance"></span> 원</span></a>
+</div> -->

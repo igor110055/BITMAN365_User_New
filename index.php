@@ -1,3 +1,11 @@
+<?php
+        $linkcss = array(
+            "assets/css/pagination.css"
+        );
+        $scriptjs = array(
+            "assets/js/privacy.js"
+        );
+    ?>
 <!-- html head -->
 <?php include __DIR__ . '/includes/head_html.php';?>
 

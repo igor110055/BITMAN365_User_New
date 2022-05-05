@@ -19,13 +19,15 @@
             display: none;
         }
         .page-inquiry{
-            padding: 20px 220px;
+            padding: 20px 0px 20px ;
             width: 100%;
         }
         .card{
             box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px 10px 4px 4px;
             height: 747px;
+            width: 104%;
+            margin-left: -2%;
         }
         .card-header{
             background: #393E46;
@@ -79,8 +81,23 @@
             display: grid;
             grid-gap: 1rem;
             grid-template-columns: 20% 75%;
-            padding: 10px 30px;
+            padding: 0px 70px;
         }
+        .modal-content{
+            width: 160%;
+            margin-top: 45%;
+            margin-left: -30%;
+        }
+        
+        .modal-title{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            color: #FFFFFF;
+        }
+        
         #modal-inquiry_submit .modal-content{
             background: #393E46;
             border: 4px solid #B4BAC8;
@@ -122,6 +139,10 @@
         #inquiry_details::placeholder,#inquiry_title::placeholder,#inquiry_title_i::placeholder,#inquiry_details_i::placeholder{
             text-align: left;
             color: #888888;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
         }
         #modal-inquiry_submit .modal-notif-title{
             color: #FFFFFF;
@@ -166,9 +187,10 @@
         }
         @media only screen and (max-width : 360px){
             .page-inquiry{
-                padding: 20px 20px;
+                padding: 20px;
                 width: 100%;
             }
+            
             .card-header{
                 font-size: 22px;
                 padding: 5px 20px;
@@ -224,7 +246,7 @@
         }
         @media screen and (max-width : 992px){
             .page-inquiry{
-                padding: 20px 20px;
+                padding: 20px;
                 width: 100%;
             }
             .card{
@@ -250,7 +272,7 @@
         }
         @media only screen and (min-width: 480px) and (max-width: 768px){
             .page-inquiry{
-                padding: 40px 10px;
+                padding: 40px;
                 width: 100%;
             }
             .inline_grp{
@@ -274,7 +296,7 @@
             ;
         }
     ?>
-    <div class="display_inquiry">
+    <!-- <div class="display_inquiry">
         <span class="toggle-close">&times;</span>
         <div class="container">
             <h4 class="modal-title mt-n4 mb-2 modal-notif-title mb-3">1:1 문의하기</h4>
@@ -292,7 +314,7 @@
                 <center><button class="btn btn_inquiry_save" type="submit">확인</button></center>
             </form>
         </div>
-    </div>
+    </div> -->
     <!-- registration Section -->
     <div class="container page-inquiry">
         <div id="pagination-result">

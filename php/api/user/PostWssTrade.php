@@ -8,5 +8,5 @@
 
     $results = json_decode(file_get_contents("php://input"));
 
-    $result = $query->PostWssTrade($results);
+    $result = $query->postWssTrade($results);
     echo json_encode($result);

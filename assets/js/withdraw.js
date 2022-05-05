@@ -13,15 +13,20 @@ $('#withdrawamount').on('change click keyup input paste',(function (event) {
           $(this).val(function(index, value) {
             return value
             .replace(/\D/g, "")
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '원';
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           });
       });
   }
   $('.btn_withdraw').click(function(){
     var withdraw = Number($('#withdrawamount').val().replace(/[^0-9\.-]+/g,""));
     var new_balance = Number($('.new_balance').text().replace(/[^0-9\.-]+/g,""));
+    var current = Number($('#cashb').text().replace(/[^0-9\.-]+/g,""));
     var formatter = new Intl.NumberFormat();
     if(withdraw <= 0){
+      $('#modal-withdraw_alert').modal('show');
+      return false;
+    }
+    else if(withdraw > current){
       $('#modal-withdraw_alert').modal('show');
       return false;
     }

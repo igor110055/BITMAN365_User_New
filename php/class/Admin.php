@@ -13,6 +13,8 @@
         private $tbl_bit_game_type = "tbl_bit_game_types";
         private $tbl_bit_reserved_result = "tbl_bit_reserved_results";
         private $tbl_bit_inquiry = "tbl_bit_inquiries";
+        private $tbl_bit_sound = "tbl_bit_sounds";
+        private $tbl_bit_note = "tbl_bit_notes";
         
         //properties  
 		public function __construct($db){
@@ -77,8 +79,8 @@
             return $stmt;
         }
 
-        //post function
-        public function postGameResultUpdate($unixtime){
+         //post function
+         public function postGameResultUpdate($unixtime){
             $query = "UPDATE ".$this->tbl_bit_wss_result." SET r_StatusId = :status WHERE r_Time_Unix = :time";
             $stmt = $this->conn->prepare($query);
 
@@ -193,7 +195,7 @@
         }
 
         public function postWsskline($result,$reserved){
-            $query = "INSERT INTO ".$this->tbl_bit_wss_result." (r_Game_Type,r_Time_Unix, r_Time_Datetime, r_Open, r_High, r_Low, r_Close,JsonDataResult, r_Price_Result, r_Game_Result) VALUES (:Game_Type, :Time_Unix, :Time_Datetime, :Open, :High, :Low, :Close,:Json, :Price_Result, :Game_Result)";
+            $query = "INSERT INTO ".$this->tbl_bit_wss_result." (r_Game_Type,r_Time_Unix, r_Time_Datetime, r_Open, r_High, r_Low, r_Close, r_StatusId,JsonDataResult, r_Price_Result, r_Game_Result) VALUES (:Game_Type, :Time_Unix, :Time_Datetime, :Open, :High, :Low, :Close,  :Status, :Json, :Price_Result, :Game_Result)";
             $stmt = $this->conn->prepare($query);
 
             $time = (string)$result->time;
@@ -204,10 +206,15 @@
             $close = (string)$result->close;
             $gametype = (string)$result->gType;
             $rs = $this->getWssdata($time,$open);
+            $s = 1;
             $json = json_encode($rs);
             $wss_trade = json_decode($json, true);
             $gr = ($rs["lastresult"]["w_Current_Price"] >= $open) ? '매수' : '매도';
             $pr = $rs["lastresult"]["w_Current_Price"];
+            // $wss_trade = json_decode($json, true);
+            // $gr = ($rs["lastresult"]["w_Current_Price"] >= $open) ? '매수' : '매도';
+            // $sum = ($rs["lastresult"]["w_Current_Price"] >= $open) ? $open - 1 : $open + 1;
+            // $pr = ($rs["lastresult"]["w_Current_Price"] >= $sum) ? $rs["lastresult"]["w_Current_Price"] : $sum;
 
             // $stmt->bindParam(':Id', $ai, PDO::PARAM_INT);
             $stmt->bindParam(':Time_Unix', $time, PDO::PARAM_STR);
@@ -220,6 +227,8 @@
             $stmt->bindParam(':Price_Result', $pr, PDO::PARAM_STR);
             $stmt->bindParam(':Game_Result', $gr, PDO::PARAM_STR);
             $stmt->bindParam(':Game_Type', $gametype, PDO::PARAM_STR);
+            $stmt->bindParam(':Status', $s, PDO::PARAM_INT);
+
             if($stmt->execute()){
                 return true;
             }
@@ -325,7 +334,7 @@
         }
 
         public function getOpenprice($time){
-            $query = "SELECT r_Open,r_Time_Unix,r_Time_Datetime FROM ".$this->tbl_bit_wss_result." WHERE r_Time_Unix = '$time' LIMIT 1"; 
+            $query = "SELECT r_Open FROM ".$this->tbl_bit_wss_result." WHERE r_Time_Unix = '$time' LIMIT 1"; 
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             return $stmt;
@@ -339,41 +348,34 @@
             $query = "SELECT w_Transaction_Id, w_Time_Min_Unix, w_Time_Kor, w_Current_Price
             FROM tbl_bit_wss_tmp 
             WHERE w_Time_Min_Unix = '$time'
-            AND w_Current_Price >= '$min'
-            AND w_Current_Price <= '$max'
+            -- AND w_Current_Price >= '$min'
+            -- AND w_Current_Price <= '$max'
             ORDER BY w_Transaction_Id ASC"; 
+
+            print_r($query);
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $resultArr = array();
             foreach($data as $key => $res){
-                if($data[$key] == $data[0]){
-                    $resultArr[] = array(
-                        "w_Transaction_Id" => $res["w_Transaction_Id"],
-                        "w_Time_Min_Unix" => $res["w_Time_Min_Unix"],
-                        "w_Time_Kor" => $res["w_Time_Kor"],
-                        "w_Current_Price" => $openPrice
-                    );
-                }else{
-                    $resultArr[] = array(
-                        "w_Transaction_Id" => $res["w_Transaction_Id"],
-                        "w_Time_Min_Unix" => $res["w_Time_Min_Unix"],
-                        "w_Time_Kor" => $res["w_Time_Kor"],
-                        "w_Current_Price" => $res["w_Current_Price"]
-                    );
-                }
+                $resultArr[] = array(
+                    "w_Transaction_Id" => $res["w_Transaction_Id"],
+                    "w_Time_Min_Unix" => $res["w_Time_Min_Unix"],
+                    "w_Time_Kor" => $res["w_Time_Kor"],
+                    "w_Current_Price" => $res["w_Current_Price"]
+                );
             }
             //$rowCount = $stmt->rowCount();
             $fresult = end($data);
-            $newfresult = array(
+             $newfresult = array(
                 "w_Transaction_Id" => $fresult["w_Transaction_Id"],
                 "w_Time_Min_Unix" => $fresult["w_Time_Min_Unix"],
                 "w_Time_Kor" => $fresult["w_Time_Kor"],
-                "w_Current_Price" => ($fresult["w_Current_Price"] >= $openPrice) ? $openprice_ex[0] + rand(1,2) . '.' . rand(0,99) : $openprice_ex[0] - rand(1,2) . '.' . rand(0,99)
+                "w_Current_Price" => ($fresult["w_Current_Price"] >= $openPrice) ? $openprice_ex[0] + rand(1,2) . '.' . rand($openprice_ex[1],99) : $openprice_ex[0] - rand(1,2) . '.' . rand(0,$openprice_ex[1])
             );
             $newarr = array(
                 "result" => array_slice($resultArr, 0, count($resultArr)-1, true),
-                "lastresult" => $newfresult
+                "lastresult" => $fresult
             );
             return $newarr;
         }
@@ -387,6 +389,13 @@
 
         public function getGameresult($time){
             $query = "SELECT r_Time_Datetime,r_Price_Result,r_Game_Result FROM ".$this->tbl_bit_wss_result." WHERE r_Time_Unix = '".$time."' LIMIT 1"; 
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        public function getOpenBet($time){
+            $query = "SELECT w_Current_Price FROM ".$this->tbl_bit_wss_tmp." WHERE w_Time_Min = '".$time."' ORDER BY w_Transaction_Id ASC"; 
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             return $stmt;
@@ -421,6 +430,41 @@
 
         public function getReserveGameResult(){
             $query = "SELECT * FROM ".$this->tbl_bit_reserved_result;
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        
+        public function getInfoCntNote(){
+            $query = "SELECT COUNT(e_State) AS Cnt FROM ".$this->tbl_bit_note." WHERE e_Account_Code = '".$_SESSION["user_session"]["u_Account_Code"]."' AND e_State IN(0)";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        public function getNoteList(){
+            $query = "SELECT * FROM tbl_bit_notes WHERE e_Account_Code = '".$_SESSION["user_session"]["u_Account_Code"]."'";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+        
+
+        public function getNotification(){
+            $query = "SELECT COUNT(s_TypeName) AS TypeCnt  FROM ".$this->tbl_bit_sound." WHERE s_TypeName IN('on') GROUP BY s_TypeName";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+        public function checkCategoryRequest(){
+            $query = "SELECT s_Notif_Type,s_TypeName FROM ".$this->tbl_bit_sound;
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            return $stmt;
+        }
+        public function setToMUte(){
+            $query = "UPDATE ".$this->tbl_bit_sound." SET s_TypeId = 0, s_TypeName = 'off'";
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             return $stmt;
@@ -482,7 +526,7 @@
                 $openprice_ex = explode('.', $data[0]["OpenPrice"]);
                 $gs = $data[0]["GameSelected"];
                 $tu = $data[0]["TimeUnix"];
-                $pr = ($gs == '매수') ? $openprice_ex[0] + rand(1,2) . '.' . rand(0,99) : $openprice_ex[0] - rand(1,2) . '.' . rand(0,99);
+                $pr = ($gs == '매수') ? $openprice_ex[0] + rand(1,2) . '.' . rand($openprice_ex[1],99) : $openprice_ex[0] - rand(1,2) . '.' . rand(0,$openprice_ex[1]);
                 $jr = $data[0]["JSONResult"];
                 $jsondecode = json_decode($jr, true);
                 $rs = $jsondecode["result"];

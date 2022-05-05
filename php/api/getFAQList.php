@@ -58,7 +58,7 @@
             $output .= '<td style="text-align: left;">'.$val["f_Title"].'</td>';
             $output .= '</tr>';
             $output .= '<tr class="rowContent">';
-            $output .= '<td colspan="2" style="background: #EEEEEE; text-align: left; padding-left: 50px;">'.$val["f_Details"].'</td>';
+            $output .= '<td colspan="2" style="background: #EEEEEE; text-align: left; padding-left: 16%;">'.$val["f_Details"].'</td>';
             $output .= '</tr>';
             $sNum ++;
         }

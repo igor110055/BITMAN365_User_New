@@ -83,6 +83,7 @@
         </div>
     </div>
 </div>
+
 <!-- display deposit submit -->
 <div class="modal fade" id="modal-deposit_submit" tabindex="-1">
     <div class="modal-dialog">
@@ -100,6 +101,40 @@
                     </div>
                     <p class="message">입금 신청이 완료되었습니다.</p>
                     <center><button class="btn btn_deposit_save" type="submit">확인</button></center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-change_password" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <h1 class="modal-title text-white mb-2">비밀번호 변경</h1>
+                    <form method="POST" class="form_changepassword">
+                        <div class="btn-group">
+                            <button class="btn btn_currpassword" type="button">현재 비밀번호</button>
+                            <input type="text" class="form-control textinput1" id="account_currentpassword" name="account_currentpassword" placeholder="********" autofocus>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn_newpassword" type="button">변경할 비밀번호</button>
+                            <input type="password" class="form-control textinput2" id="s_password" name="s_password" placeholder="********" autofocus>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn_reenterpassword" type="button">비밀번호 재입력</button>
+                            <input type="password" class="form-control textinput3" id="chk_password" name="chk_password" placeholder="********" autofocus>
+                        </div>
+                        <p class="message" style="color: #FF787B; text-align: center;" >입력하신 정보가 잘못되었습니다. 확인하시고 다시 변경해주세요.</p>
+                        <div class="display_error text-center"></div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="submit" class="btn btn-user-orange">변경하기</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -124,6 +159,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- display withdraw submit -->
 <div class="modal fade" id="modal-withdraw_submit" tabindex="-1">
     <div class="modal-dialog">
